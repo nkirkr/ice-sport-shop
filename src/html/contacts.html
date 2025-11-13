@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    @@include('../img/sprite.svg') @@include('layout/header.html')
+    <main class="main">
+      <section class="contacts-page-header">
+        <div class="container">
+          <nav class="breadcrumbs contacts-page-header__breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li><a class="breadcrumbs__link" href="/">Главная</a></li>
+              <li
+                class="breadcrumbs__separator breadcrumbs__separator--current"
+              ></li>
+              <li class="breadcrumbs__current">Контакты</li>
+            </ul>
+          </nav>
+          <h1 class="contacts-page-header__title">Контактная информация</h1>
+        </div>
+      </section>
+      @@include('home/map.html')
+    </main>
+    @@include('layout/cart.html') @@include('layout/favorites.html')
+    @@include('layout/footer.html') @@include('layout/overlay.html')
+    <script src="./js/main.bundle.js"></script>
+    <script src="./js/contacts.bundle.js"></script>
+  </body>
+</html>

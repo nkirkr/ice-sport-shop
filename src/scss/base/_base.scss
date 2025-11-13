@@ -1,0 +1,30 @@
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+	font-size: calc(1vw / 14.4);
+	font-family: var(--font-family);
+
+	@media (max-width: 768px) {
+		font-size: calc(1vw / 3.75);
+	}
+
+	// @media screen and (min-width: 1920px) { 
+	// 	font-size: calc(1vw / 19.2)
+	// }
+}
+
+body {
+	font-size: 14rem;
+	overflow-x: hidden;
+	background-color: var(--white-light);
+}
+
+.main {
+	margin-top: 85rem;
+}
+
+@media (max-width: 768px) {
+	.main {
+		margin-top: 135rem;
+	}
+}

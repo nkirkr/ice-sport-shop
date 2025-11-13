@@ -1,0 +1,36 @@
+:root {
+	// Container
+	--container-width: 1200rem;
+	--container-padding: 120rem;
+
+	// Fonts
+	--font-family: "Albert Sans", sans-serif;
+	--second-family: "Manrope", sans-serif;
+	--third-family: "Inter", sans-serif;
+
+	// Colors - Light
+	--white: #FFFFFF;
+	--white-light: #F8F8F8;
+	--white-alpha-20: rgba(248, 248, 248, 0.2);
+
+	// Colors - Dark
+	--black: #0F0F0F;
+	--dark: #232323;
+	--dark-80: rgba(35, 35, 35, 0.8);
+	--dark-60: rgba(35, 35, 35, 0.6);
+	--dark-40: rgba(35, 35, 35, 0.4);
+	--dark-20: rgba(35, 35, 35, 0.2);
+	--dark-10: rgba(35, 35, 35, 0.1);
+
+	// Colors - Grey
+	--back: #F2F2F2;
+	--grey: #F2F2F2;
+
+	// Colors - Accent
+	--red: #FF4C4C;
+
+	// Text colors
+	--text: rgba(35, 35, 35, 0.6);
+	--text-primary: #0F0F0F;
+	--text-secondary: #6D6D6D;
+}

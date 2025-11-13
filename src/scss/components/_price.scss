@@ -1,0 +1,21 @@
+.price {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+    margin-bottom: 20rem;
+    line-height: 120%;
+    &__current {
+        font-weight: 700;
+        font-size: 24rem;
+        color: var(--black);
+    }
+    &__before {
+        font-size: 16rem;
+        text-decoration: line-through;
+        color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 16rem;
+    }
+}

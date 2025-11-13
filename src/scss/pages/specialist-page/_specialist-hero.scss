@@ -1,0 +1,68 @@
+.specialist-hero {
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        gap: 40rem;
+    }
+    &__image {
+        width: 400rem;
+        height: 500rem;
+        flex: 0 0 auto;
+    }
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__list {
+       padding-bottom: 40rem;
+    }
+    &__descr {
+        margin-bottom: 30rem;
+    }
+    &__skills {
+        padding-bottom: 40rem;
+        color: var(--black);
+        &-title {
+            font-weight: 600;
+            font-size: 20rem;
+            margin-bottom: 15rem;
+        }
+        &-text {
+            font-size: 16rem;
+        }
+    }
+    &__btn {
+        padding-top: 40rem;
+        color: var(--white);
+        border-radius: 50rem;
+        padding: 10rem 40rem;
+        background: var(--accent-light);
+    }
+
+    @media (max-width: 768px) {
+        &__content {
+            flex-direction: column;
+            gap: 20rem;
+        }
+        &__image {
+            width: 100%;
+            height: 418rem;
+        }
+        &__name {
+            font-size: 32rem;
+        }
+        &__list {
+            padding-bottom: 30rem;
+        }
+        &__skills {
+            padding-bottom: 30rem;
+            &-title {
+                font-size: 16rem;
+            }
+        }
+        &__btn {
+            width: 100%;
+        }
+    }
+}

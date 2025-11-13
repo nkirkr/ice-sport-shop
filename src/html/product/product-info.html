@@ -1,0 +1,106 @@
+<div class="product__info">
+  <h1 class="product__title">Наименование</h1>
+  <p class="product__sku">Код товара: 111222-333</p>
+
+  <p class="product__description">
+    С развитием технологий каждое новое открытие становится значительным шагом
+    вперёд. Современные решения находят применение в различных сферах жизни,
+    улучшая качество и ускоряя процессы. Важно быть в курсе последних тенденций,
+    чтобы не упустить новые возможности.
+  </p>
+
+  <div class="product__divider"></div>
+
+  <div class="product__variants">
+    <h3 class="product__variants-title">Вариация товара</h3>
+    <div class="product__variant-colors">
+      <button
+        class="product__color product__color--active"
+        style="background-image: url('./img/hero.png')"
+        aria-label="Цвет 1"
+      ></button>
+      <button
+        class="product__color"
+        style="background-image: url('./img/service-hero.png')"
+        aria-label="Цвет 2"
+      ></button>
+      <button
+        class="product__color"
+        style="background-image: url('./img/cert.png')"
+        aria-label="Цвет 3"
+      ></button>
+    </div>
+  </div>
+
+  <div class="product__sizes">
+    <h3 class="product__sizes-title">Выберите размер:</h3>
+    <div class="product__size-list">
+      <button class="product__size-btn">42</button>
+      <button class="product__size-btn">44</button>
+      <button class="product__size-btn">46</button>
+      <button class="product__size-btn">48</button>
+      <button class="product__size-btn">50</button>
+      <button class="product__size-btn">52</button>
+    </div>
+  </div>
+
+  <div class="product__price-section">
+    <div class="product__price-wrapper">
+      <span class="product__price-current">5 000 ₽</span>
+      <span class="product__price-old">8 750</span>
+    </div>
+    <span class="product__discount-text">Скидка 20%</span>
+  </div>
+
+  <div class="product__controls">
+    <button class="product__add-to-cart">Добавить в корзину</button>
+    <div class="quantity">
+      <button class="quantity__btn" aria-label="Уменьшить количество">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <line
+            x1="2.5"
+            y1="9.375"
+            x2="17.5"
+            y2="9.375"
+            stroke="currentColor"
+            stroke-width="1.25"
+          />
+        </svg>
+      </button>
+      <input type="number" min="1" value="3" class="quantity__input" readonly />
+      <button class="quantity__btn" aria-label="Увеличить количество">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <line
+            x1="2.5"
+            y1="10"
+            x2="17.5"
+            y2="10"
+            stroke="currentColor"
+            stroke-width="1.25"
+          />
+          <line
+            x1="10"
+            y1="2.5"
+            x2="10"
+            y2="17.5"
+            stroke="currentColor"
+            stroke-width="1.25"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="product__action-buttons">
+      <button
+        class="product__action-btn product__favorite"
+        aria-label="Добавить в избранное"
+      >
+        <img
+          src="./img/icons/bestsellers/favourite.svg"
+          alt=""
+          width="19"
+          height="19"
+        />
+      </button>
+    </div>
+  </div>
+</div>

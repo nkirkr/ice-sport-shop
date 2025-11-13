@@ -1,0 +1,10 @@
+.specialists__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12rem;
+
+    @media (max-width: 768px) {
+        margin-bottom: 40rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

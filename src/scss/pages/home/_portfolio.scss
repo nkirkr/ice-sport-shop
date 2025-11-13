@@ -1,0 +1,52 @@
+.portfolio {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18rem;
+        
+    }
+    &__item {
+        padding-bottom: 8rem;
+        border-bottom: 1rem solid var(--line);
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    &__case {
+        height: 150rem;
+        position: relative;
+        &--before {
+            &:before {
+                content: 'До';
+            }
+        }
+        &--after {
+            &::before {
+                content: 'После';
+            }
+        }
+        &:before {
+            position: absolute;
+            top: 12rem;
+            left: 12rem;
+            padding: 6rem 16rem;
+            background-color: red;
+            color: var(--white); 
+            border-radius: 20rem;
+            background: rgba(0, 0, 0, 0.6);
+        }
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10rem;
+    }
+    
+    @media (max-width: 768px) {
+        &__grid {
+            grid-template-columns: none;
+            gap: 20rem;
+        }
+    }
+}

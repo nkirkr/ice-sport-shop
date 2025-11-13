@@ -1,0 +1,277 @@
+.catalog-filters {
+    position: absolute;
+    top: -60rem;
+    right: 80rem;
+    width: 260rem;
+    flex-shrink: 0;
+    
+    &__title {
+        font-size: 24rem;
+        margin-bottom: 15rem;
+        font-weight: 600;
+    }
+    
+    &__categories-item {
+        .acnav__label {
+            padding: 0;
+            margin-bottom: 15rem;  
+            font-weight: 500;
+            font-size: 18rem;
+            color: var(--dark-60);
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+        }
+    }
+    
+    &__range {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 239rem;
+        gap: 15rem;
+        
+        input {
+            width: 160rem;
+            height: 40rem;
+            background: var(--grey);
+            border-radius: 10rem;
+            padding: 10rem 14rem;
+            border: none;
+            font-family: var(--font-family);
+            font-size: 14rem;
+            color: var(--dark);
+            
+            &::placeholder {
+                color: var(--dark-60);
+            }
+        }
+    }
+    
+    &__select {
+        padding: 10rem 12rem;
+        font-size: 14rem;
+        color: var(--dark-60);
+        cursor: pointer;
+        
+        span {
+            color: var(--dark-60);
+        }
+    }
+    
+    &__section {
+        padding-bottom: 40rem;
+    }
+    
+    &__actions {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        position: unset;
+        width: 100%;
+        border: none;
+        order: 0;
+        
+        &__categories {
+            border: none;
+            padding-bottom: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+            
+            .acnav__main-list {
+                padding: 0;
+            }
+            
+            .acnav__list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            
+            &-item {
+                border-bottom: 1rem solid #cdcdcd;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+                
+                .acnav__label {
+                    padding: 10rem 12rem;
+                    text-decoration: none;
+                    margin-bottom: 0;
+                    font-weight: 400;
+                    border-bottom: 1rem solid #cdcdcd;
+                    font-size: 14rem;
+                    line-height: 1.4;
+                    color: var(--dark-60);
+                    cursor: pointer;
+                    transition: color 0.3s ease;
+                    
+                    &:hover {
+                        color: var(--dark);
+                    }
+                }
+            }
+        }
+        
+        &__section {
+            padding: 0;
+            border-bottom: 1rem solid #cdcdcd;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        
+        &__range {
+            margin: 0;
+            padding: 10rem 0;
+            max-width: none;
+            
+            input {
+                width: 160rem;
+            }
+        }
+        
+        &__title {
+            margin-bottom: 0;
+            padding: 10rem 0;
+            position: relative;
+            font-size: 18rem;
+            font-weight: 400;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            
+            .catalog-filters__arrow {
+                width: 18rem;
+                height: 18rem;
+                display: block;
+                flex-shrink: 0;
+                margin-left: 10rem;
+                transition: transform 0.3s ease;
+            }
+        }
+        
+        &__section.is-open {
+            .catalog-filters__title .catalog-filters__arrow {
+                transform: rotate(180deg);
+            }
+        }
+        
+        &__content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+        
+        &__select {
+            padding: 10rem 12rem;
+            font-size: 14rem;
+            color: var(--dark-60);
+            border-bottom: none;
+        }
+        
+        &__actions {
+            display: flex;
+            align-items: center;
+            gap: 12rem;
+            padding-top: 40rem;
+            border-top: 1rem solid #cdcdcd;
+            width: 100%;
+            margin-bottom: 40rem;
+        }
+        
+        &__reset {
+            flex: 1;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 12rem;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--dark);
+            background: transparent;
+            padding: 10rem 0rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: .2s ease-in;
+            
+            &:hover {
+                border-color: var(--dark);
+                opacity: 0.8;
+            }
+        }
+        
+        &__apply {
+            flex: 1;
+            font-family: 'Albert Sans', sans-serif;
+            font-size: 12rem;
+            font-weight: 400;
+            color: var(--white);
+            background-color: var(--dark);
+            border: none;
+            border-radius: 5rem;
+            padding: 11rem 20rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: .2s ease-in;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.catalog__filters-wrapper {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .catalog__filters-wrapper {
+        display: block !important;
+        width: 100%;
+        margin-bottom: 20rem;
+    }
+    
+    .catalog-filters.nav-wrap {
+        display: none;
+    }
+    
+    .catalog-filters {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .catalog-filters-wrapper {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+        width: 100%;
+        display: block;
+        
+        &.active {
+            max-height: 10000rem;
+            opacity: 1;
+            visibility: visible;
+            overflow: visible;
+            
+            // Показываем внутренний контент
+            .acnav__main-list {
+                display: block !important;
+            }
+            
+            .catalog-filters.nav-wrap {
+                display: block !important;
+            }
+        }
+    }
+}
+

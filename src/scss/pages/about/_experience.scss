@@ -1,0 +1,81 @@
+.experience {
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 35rem;
+    }
+    &__title {
+        max-width: 375rem;
+        margin-bottom: 0;
+    }
+    &__subtitle {
+        max-width: 630rem;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 9rem;
+        &:nth-of-type(1) {
+            min-height: 311rem;
+            margin-bottom: 9rem;
+            .experience__item:nth-child(2) {
+                border-color: var(--line);
+                .experience__item-number {
+                    color: var(--line);
+                }
+            }
+            .experience__item:nth-child(3) {
+                grid-column: span 2;
+            }
+        }
+        &:nth-of-type(2) {
+            min-height: 300rem;
+            .experience__item:nth-child(1), .experience__item:nth-child(3), .experience__item:nth-child(4) {
+                border-color: var(--line);
+                .experience__item-number {
+                    color: var(--line);
+                }
+            }
+        }
+    }
+    &__item {
+        border: 1rem solid var(--accent);
+        border-radius: 20rem;
+        padding: 15rem;
+        display: flex;
+        flex-direction: column;
+        &-title {
+            font-weight: 600;
+            font-size: 18rem;
+            margin-bottom: 8rem;
+            margin-top: auto;
+        }
+        &-number {
+            font-size: 18rem;
+            line-height: 110%;
+            color: var(--accent);
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__header {
+            flex-direction: column;
+            margin-bottom: 20rem;
+        }
+        &__title {
+            margin-bottom: 12rem;
+        }
+        &__list {
+            grid-template-columns: 1fr;
+            &:nth-of-type(1) {
+                .experience__item:nth-child(3) {
+                    grid-column: unset;
+                }
+            }
+        }
+        &__item {
+            min-height: 278rem;
+        }
+    }
+}

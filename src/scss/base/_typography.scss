@@ -1,0 +1,61 @@
+.section-title {
+	font-weight: 700;
+	font-size: 36rem;
+	line-height: 120%;
+	color: var(--black);
+	margin-bottom: 20rem;
+}
+.h2-title {
+	font-weight: 600;
+	font-size: 28rem;
+	color: var(--black);
+	margin-bottom: 20rem;
+}
+.h3-title {
+	font-weight: 700;
+	font-size: 18rem;
+	line-height: 120%;
+	color: var(--black);
+}
+.paragraph {
+	font-size: 14rem;
+	line-height: 120%;
+	color: var(--text);
+}
+.text-title {
+	font-weight: 600;
+	font-size: 14rem;
+	color: var(--black);
+	margin-bottom: 12rem;
+}
+.fw-600 {
+	font-weight: 600;
+}
+.fw-700 {
+	font-weight: 700;
+}
+.dot-list {
+	padding-left: 15rem;
+	color: var(--text);
+	display: flex;
+	flex-direction: column;
+	gap: 8rem;
+	li {
+		list-style: disc;
+	}
+}
+.number-list {
+	padding-left: 15rem;
+	color: var(--text);
+	display: flex;
+	flex-direction: column;
+	gap: 8rem;
+}
+@media (max-width: 768px) {
+	.section-title {
+		font-size: 24rem;
+	}
+	.h2-title {
+		font-size: 20rem;
+	}
+}

@@ -1,0 +1,20 @@
+.specialist-works {
+    &__list {
+        display: grid!important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18rem;
+    }
+    &__controls {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        &__list {
+            display: flex!important;
+            gap: 0;
+        }
+        &__controls {
+            display: flex;
+        }
+    }
+}

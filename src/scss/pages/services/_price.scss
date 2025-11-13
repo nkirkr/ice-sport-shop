@@ -1,0 +1,138 @@
+.service-price {
+    position: relative;
+}
+
+.price-table {
+    width: 100%;
+    
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--dark);
+        padding: 20rem;
+        border-radius: 5rem 5rem 0 0;
+    }
+    
+    &__col {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 14rem;
+        line-height: 1.2;
+        color: var(--white);
+        
+        &--name {
+            width: 105rem;
+        }
+        
+        &--desc {
+            flex: 1;
+            margin-left: 207rem;
+        }
+        
+        &--price {
+            width: 100rem;
+            margin-left: 120rem;
+        }
+    }
+    
+    &__body {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16rem 0;
+        border-bottom: 1rem solid #DFDFDF;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    
+    &__name {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 600;
+        font-size: 16rem;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        color: #232323;
+        margin: 0;
+        white-space: nowrap;
+        flex-shrink: 0;
+        width: 196rem;
+    }
+    
+    &__description {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 16rem;
+        line-height: 1.2;
+        color: rgba(41, 41, 41, 0.6);
+        margin: 0;
+        flex: 1;
+        max-width: 574rem;
+    }
+    
+    &__cost {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 600;
+        font-size: 16rem;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        color: #353535;
+        margin: 0;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    @media (max-width: 1024px) {
+        &__header {
+            display: none;
+        }
+        
+        &__row {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 16rem 0;
+            gap: 16rem;
+        }
+        
+        &__name {
+            white-space: normal;
+            width: 100%;
+        }
+        
+        &__description {
+            margin: 0;
+            max-width: 100%;
+        }
+        
+        &__cost {
+            margin: 0;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        &__row {
+            padding: 16rem 0;
+            gap: 0;
+        }
+        
+        &__name {
+            margin-bottom: 16rem;
+        }
+        
+        &__description {
+            margin: 0 0 24rem 0;
+        }
+        
+        &__cost {
+            margin: 0;
+        }
+    }
+}
+

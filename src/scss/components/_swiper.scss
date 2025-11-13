@@ -1,0 +1,32 @@
+.swiper-controls {
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 20rem;
+    margin-top: 20rem;
+    @media (max-width: 500px) {
+        display: flex;
+    }
+}
+.swiper-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50rem;
+    height: 50rem;
+    background-color: var(--accent);
+    border-radius: 100%;
+    transition: .2s ease-in;
+    img {
+        width: 26rem;
+        height: 26rem;
+    }
+    
+    &:hover {
+        background-color: var(--accent-dark);
+    }
+}
+.swiper-button-disabled {
+    opacity: 0.3;
+}

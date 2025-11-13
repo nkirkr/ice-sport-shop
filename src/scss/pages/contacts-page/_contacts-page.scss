@@ -1,0 +1,97 @@
+.contacts-page {
+    &__title {
+        margin-bottom: 0;
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40rem;
+    }
+    &__contacts {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 40rem;
+    }
+    &__socials {
+        margin-left: 40rem;
+        display: flex;
+        align-items: center;
+        gap: 8rem;
+        &-item {
+            flex: 0 0 auto;
+        }
+    }
+    &__map {
+        padding-bottom: 0!important;
+    }
+
+    @media (max-width: 768px) {
+
+        &__header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__title {
+            margin-bottom: 20rem;
+        }
+        &__contacts {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 0;
+            gap: 20rem;
+            margin-bottom: 30rem;
+        }
+        &__socials {
+            margin-left: 0;
+        }
+        &__map {
+            padding-bottom: 28rem!important;
+        }
+    }
+}
+
+.contacts-page-header {
+    padding-top: 40rem;
+    padding-bottom: 40rem;
+    
+    &__breadcrumbs {
+        padding: 0;
+        margin-bottom: 34rem;
+        
+        .breadcrumbs__list {
+            justify-content: flex-start;
+        }
+    }
+    
+    &__title {
+        font-weight: 700;
+        font-size: 48rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+    }
+    
+    .page-section {
+        margin-bottom: 0;
+    }
+    
+    @media (max-width: 768px) {
+        padding-top: 30rem;
+        padding-bottom: 0;
+        
+        &__breadcrumbs {
+            margin-bottom: 24rem;
+        }
+        
+        &__title {
+            font-size: 24rem;
+        }
+    }
+}
+
+// Убираем верхний отступ у карты на странице контактов
+.contacts-page-header + .map-section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}

@@ -1,0 +1,10 @@
+.icon-text {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+    color: var(--text);
+    img, svg {
+        width: 18rem;
+        height: 18rem;
+    }
+}

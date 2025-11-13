@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Скидка пенсионерам</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    @@include('../img/sprite.svg') @@include('layout/header.html')
+    <main class="main">
+      <section class="promo-single-header">
+        <div class="container">
+          <nav class="breadcrumbs promo-single-header__breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li><a class="breadcrumbs__link" href="/">Главная</a></li>
+              <li class="breadcrumbs__separator"></li>
+              <li><a class="breadcrumbs__link" href="/promo.html">Акции</a></li>
+              <li
+                class="breadcrumbs__separator breadcrumbs__separator--current"
+              ></li>
+              <li class="breadcrumbs__current">Скидка пенсионерам</li>
+            </ul>
+          </nav>
+          <h1 class="promo-single-header__title">Скидка пенсионерам</h1>
+          <p class="promo-single-header__date">
+            Дата проведения: с 1 до 25 числа!
+          </p>
+          <div class="promo-single-header__actions">
+            <p class="promo-single-header__price">Цена: от 12500 рублей.</p>
+            <a
+              href="#!"
+              class="promo-single-header__button btn-double btn-double--black"
+            >
+              <span class="btn-double__text">Участвовать</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-single page-section">
+        <div class="container">
+          <div class="promo-single__image-wrapper">
+            <img
+              class="promo-single__image"
+              src="/img/promo-single.png"
+              alt="Скидка пенсионерам"
+              loading="lazy"
+            />
+          </div>
+          <div class="promo-single__terms">
+            <h2 class="promo-single__terms-title">Кто может участвовать</h2>
+            <ol class="promo-single__terms-list">
+              <li>Обучение и повышение квалификации!</li>
+              <li>Внедрение новых подходов и методологий!</li>
+              <li>Постоянное совершенствование процессов!</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('layout/cart.html') @@include('layout/favorites.html')
+    @@include('layout/footer.html') @@include('layout/overlay.html')
+    <script src="./js/main.bundle.js"></script>
+    <script src="./js/index.bundle.js"></script>
+  </body>
+</html>

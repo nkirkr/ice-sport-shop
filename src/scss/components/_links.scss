@@ -1,0 +1,16 @@
+.arrow-link {
+    position: relative;
+    font-size: 16rem;
+    color: var(--black);
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../../img/icons/small-arrow-right.svg);
+        background-size: contain;
+        width: 18rem;
+        height: 18rem;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}

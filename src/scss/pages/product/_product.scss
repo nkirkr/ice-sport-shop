@@ -1,0 +1,256 @@
+.product {
+    position: relative;
+    
+    &__top {
+        display: grid;
+        grid-template-columns: 590rem 1fr;
+        gap: 40rem;
+        margin-bottom: 40rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 20rem;
+    }
+
+    &__title {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 32rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    &__sku {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 14rem;
+        line-height: 1.2;
+        color: var(--dark-80);
+        margin: 0;
+    }
+
+    &__action-btn {
+        width: 32rem;
+        height: 32rem;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--dark);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        svg, img {
+            width: 19rem;
+            height: 19rem;
+            color: var(--white);
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    &__description {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 300;
+        font-size: 14rem;
+        line-height: 1.4;
+        color: var(--dark-60);
+        margin: 0;
+    }
+
+    &__divider {
+        width: 100%;
+        height: 1px;
+        background-color: var(--dark-20);
+    }
+
+    &__variants-title,
+    &__sizes-title {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 12rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0 0 20rem 0;
+    }
+
+    &__variant-colors {
+        display: flex;
+        align-items: center;
+        gap: 10rem;
+    }
+
+    &__color {
+        width: 45rem;
+        height: 45rem;
+        border-radius: 22.5rem;
+        border: 3rem solid transparent;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+        transition: border-color 0.2s;
+
+        &:hover:not(&--active) {
+            border-color: var(--dark-40);
+        }
+
+        &--active {
+            border-color: var(--dark);
+        }
+    }
+
+    &__size-list {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        flex-wrap: wrap;
+    }
+
+    &__size-btn {
+        width: 65rem;
+        height: 40rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: 1px solid var(--dark-40);
+        border-radius: 5rem;
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 12rem;
+        line-height: 1.2;
+        color: var(--dark-40);
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover:not(&--active) {
+            border-color: var(--dark);
+            color: var(--dark);
+        }
+
+        &--active {
+            background-color: var(--dark);
+            border-color: var(--dark);
+            color: var(--white);
+        }
+    }
+
+    &__price-section {
+        display: flex;
+        align-items: center;
+        gap: 12rem;
+    }
+
+    &__price-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 12rem;
+    }
+
+    &__price-current {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 24rem;
+        line-height: 1.2;
+        color: var(--dark);
+    }
+
+    &__price-old {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 16rem;
+        line-height: 1.2;
+        color: var(--dark-80);
+        text-decoration: line-through;
+    }
+
+    &__discount-text {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 20rem;
+        line-height: 1.2;
+        color: var(--red);
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        gap: 12rem;
+    }
+    
+    &__action-buttons {
+        display: flex;
+        align-items: center;
+        gap: 12rem;
+    }
+
+    &__add-to-cart {
+        width: 300rem;
+        height: 50rem;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--dark);
+        color: var(--white);
+        border: none;
+        border-radius: 5rem;
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 12rem;
+        line-height: 1.2;
+        cursor: pointer;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &__top {
+            grid-template-columns: 1fr;
+            gap: 30rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__top {
+            gap: 20rem;
+            margin-bottom: 30rem;
+        }
+
+        &__title {
+            font-size: 24rem;
+        }
+
+        &__controls {
+            flex-wrap: wrap;
+            gap: 12rem;
+            justify-content: space-between;
+        }
+
+        &__add-to-cart {
+            width: 100%;
+            order: 4;
+        }
+
+        .quantity {
+            flex: 1;
+            order: 2;
+            max-width: 97rem;
+        }
+
+        &__action-buttons {
+            order: 3;
+        }
+    }
+}

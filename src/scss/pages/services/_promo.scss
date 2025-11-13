@@ -1,0 +1,156 @@
+.service-promo {
+    &__title {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 36rem;
+        line-height: 1.2;
+        color: var(--black);
+        margin: 0 0 40rem 0;
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 27rem;
+        
+        &.swiper {
+            // На десктопе grid работает как обычно
+            .swiper-wrapper {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 27rem;
+            }
+            
+            .swiper-slide {
+                display: block;
+            }
+        }
+    }
+
+    &__control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50rem;
+        height: 51rem;
+        display: none !important;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--dark-80);
+        border: 1px solid var(--white-alpha-20);
+        border-radius: 0;
+        padding: 1rem;
+        cursor: pointer;
+        transition: opacity 0.2s;
+
+        img {
+            width: 13rem;
+            height: 13rem;
+            display: block;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &.swiper-button-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        &.swiper-button-lock {
+            display: none !important;
+        }
+
+        &.service-promo__prev {
+            left: 0;
+            
+            img {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.service-promo__next {
+            right: 0;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20rem;
+            
+            &.swiper {
+                .swiper-wrapper {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__title {
+            font-size: 24rem;
+            margin-bottom: 30rem;
+        }
+
+        &__grid {
+            display: block;
+            overflow: hidden;
+            
+            &.swiper {
+                display: block;
+                overflow: hidden;
+                
+                .swiper-wrapper {
+                    display: flex;
+                    gap: 0;
+                }
+                
+                .swiper-slide {
+                    width: 100% !important;
+                    flex-shrink: 0;
+                    display: block;
+                }
+            }
+        }
+
+        &__control {
+            display: flex !important;
+            width: 32rem;
+            height: 32rem;
+
+            &.service-promo__prev {
+                left: 0;
+            }
+
+            &.service-promo__next {
+                right: 0;
+            }
+        }
+    }
+}
+
+// Специфичные стили для карточек акций на странице услуг
+.service-promo {
+    .promo-card {
+        &__image-wrapper {
+            border-radius: 0;
+            overflow: visible;
+            min-height: 396rem;
+        }
+
+        &__image {
+            border-radius: 10rem;
+            object-fit: contain;
+        }
+    }
+}
+

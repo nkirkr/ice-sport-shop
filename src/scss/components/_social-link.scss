@@ -1,0 +1,40 @@
+.social-link {
+    width: 40rem;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: var(--grey);
+    transition: .2s ease-in;
+    svg {
+        width: 14rem;
+        height: 14rem;
+        path {
+            transition: .2s ease-in;
+        }
+    }
+    &--sm {
+        width: 34rem;
+        height: 34rem;
+        svg {
+            width: 12rem;
+            height: 12rem;
+        }
+    }
+    &--grey {
+        background-color: var(--grey);
+    }
+    &--white {
+        background-color: transparent;
+    }
+
+    &:hover {
+        background-color: var(--accent-light);
+        svg {
+            path {
+                fill: var(--white);
+            }
+        }
+    }
+}

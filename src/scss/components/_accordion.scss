@@ -1,0 +1,75 @@
+.accordion {
+	background: var(--white);
+	padding: 20rem;
+	position: relative;
+	border-radius: 10rem;
+}
+
+// Для страниц с серым фоном (about, dekor)
+.about-faq .accordion,
+.dekor-faq .accordion {
+	background: var(--grey);
+	padding: 24rem 20rem;
+	border-radius: 0;
+}
+
+.accordion__control {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.accordion__content {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	// padding-top: 20rem;
+	will-change: max-height;
+	transition: all 0.3s ease-out;
+	box-sizing: content-box;
+	font-size: 16rem;
+	color: var(--text);
+}
+
+.accordion__title {
+	font-weight: 600;
+	font-size: 20rem;
+	color: var(--black);
+}
+
+.accordion__icon {
+	width: 32rem;
+	height: 32rem;
+	transition: transform 0.3s ease-out;
+}
+.open .accordion__content {
+	padding-top: 40rem;
+}
+.open .accordion__icon {
+	transform: rotate(45deg);
+}
+
+.open .accordion__content {
+	opacity: 1;
+}
+
+@media (max-width: 768px) {
+	.accordion {
+		padding: 16rem;
+	}
+	.accordion__icon {
+		width: 20rem;
+		height: 20rem;
+	}
+	.accordion__title {
+		font-size: 16rem;
+		text-align: start;
+	}
+	.open .accordion__content {
+		padding-top: 16rem;
+	}
+	.accordion__content {
+		font-size: 14rem;
+	}
+}

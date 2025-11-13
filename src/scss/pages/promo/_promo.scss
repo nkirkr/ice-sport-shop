@@ -1,0 +1,307 @@
+// Заголовок страницы акций
+.promo-page-header {
+    padding-top: 40rem;
+    margin-bottom: 40rem;
+    
+    &__breadcrumbs {
+        padding: 0;
+        margin-bottom: 34rem;
+        
+        .breadcrumbs__list {
+            justify-content: flex-start;
+        }
+    }
+    
+    &__title {
+        font-weight: 400;
+        font-size: 48rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0 0 20rem 0;
+    }
+    
+    &__subtitle {
+        font-weight: 400;
+        font-size: 20rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+    }
+    
+    @media (max-width: 768px) {
+        padding-top: 30rem;
+        
+        &__breadcrumbs {
+            margin-bottom: 24rem;
+        }
+        
+        &__title {
+            font-size: 32rem;
+            margin-bottom: 16rem;
+        }
+        
+        &__subtitle {
+            font-size: 14rem;
+        }
+    }
+}
+
+// Убираем верхний отступ у promo секции после заголовка
+.promo-page-header + .promo {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    
+    // Скрываем заголовок и ссылку внутри секции promo на странице акций
+    .promo__header {
+        display: none;
+    }
+    
+    .promo__grid {
+        margin-bottom: 80rem;
+    }
+    
+    @media (max-width: 768px) {
+        .promo__grid {
+            margin-bottom: 60rem;
+        }
+    }
+}
+
+// Секция с policy и картинкой
+.promo-policy-section {
+    padding-top: 0;
+    padding-bottom: 80rem;
+    
+    &__wrapper {
+        display: flex;
+        gap: 40rem;
+        align-items: stretch;
+        max-width: 1280rem;
+        margin: 0 auto;
+    }
+    
+    &__image {
+        flex-shrink: 0;
+        width: 480rem;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        padding-bottom: 60rem;
+        
+        &__wrapper {
+            flex-direction: column;
+            padding: 0;
+        }
+        
+        &__image {
+            display: none;
+        }
+    }
+}
+
+.promo-policy {
+    padding-bottom: 0;
+    flex: 1;
+}
+
+// Заголовок страницы promo-single
+.promo-single-header {
+    padding-top: 40rem;
+    padding-bottom: 40rem;
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20rem;
+        align-items: flex-start;
+    }
+    
+    &__breadcrumbs {
+        padding: 0;
+        margin-bottom: 14rem;
+        width: 100%;
+        
+        .breadcrumbs__list {
+            justify-content: flex-start;
+        }
+    }
+    
+    &__title {
+        font-weight: 400;
+        font-size: 48rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+        flex: 1;
+    }
+    
+    &__date {
+        font-weight: 400;
+        font-size: 14rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+        order: 3;
+        width: 100%;
+    }
+    
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 20rem;
+        flex-shrink: 0;
+        order: 2;
+    }
+    
+    &__price {
+        font-weight: 400;
+        font-size: 16rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+        white-space: nowrap;
+    }
+    
+    &__button {
+        flex-shrink: 0;
+        text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+        padding-top: 0;
+        padding-bottom: 30rem;
+        
+        .container {
+            flex-direction: column;
+            gap: 16rem;
+        }
+        
+        &__breadcrumbs {
+            margin-bottom: 8rem;
+        }
+        
+        &__title {
+            font-size: 32rem;
+            width: 100%;
+            order: 1;
+        }
+        
+        &__date {
+            font-size: 12rem;
+            order: 2;
+        }
+        
+        &__actions {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            gap: 16rem;
+            order: 3;
+        }
+        
+        &__price {
+            font-size: 14rem;
+        }
+        
+        &__button {
+            width: 100%;
+            
+            .btn-double__text {
+                flex: 1;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// Страница promo-single
+.promo-single {
+    padding-top: 0;
+    padding-bottom: 80rem;
+    
+    &__image-wrapper {
+        width: 100%;
+        margin-bottom: 40rem;
+    }
+    
+    &__image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+    
+    &__terms {
+        display: flex;
+        flex-direction: column;
+        gap: 20rem;
+    }
+    
+    &__terms-title {
+        font-weight: 500;
+        font-size: 24rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+    }
+    
+    &__terms-list {
+        list-style: decimal;
+        padding-left: 20rem;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12rem;
+        
+        li {
+            font-weight: 400;
+            font-size: 16rem;
+            line-height: 1.2;
+            color: var(--dark);
+            padding-left: 8rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        padding-bottom: 0;
+        
+        &__image-wrapper {
+            margin-bottom: 30rem;
+        }
+        
+        &__image {
+            min-height: 200rem;
+        }
+        
+        &__terms {
+            gap: 16rem;
+        }
+        
+        &__terms-title {
+            font-size: 20rem;
+        }
+        
+        &__terms-list {
+            gap: 10rem;
+            
+            li {
+                font-size: 14rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .promo-policy {
+        &__title {
+            margin-bottom: 16rem;
+        }
+    }
+}

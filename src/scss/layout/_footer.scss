@@ -1,0 +1,126 @@
+.footer {
+    background-color: #232323;
+    color: var(--white);
+    
+    &__main {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 30rem 0 40rem;
+        border-bottom: 1rem solid rgba(248, 248, 248, 0.2);
+    }
+    &__info {
+        padding: 20rem 0 30rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--white);
+    }
+    &__title {
+        font-family: var(--font-family);
+        font-size: 12rem;
+        font-weight: 300;
+        color: var(--white);
+        margin-bottom: 12rem;
+    }
+    &__item {
+        color: var(--white);
+        
+        address {
+            color: var(--white);
+            font-style: normal;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12rem;
+        &-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 30rem;
+        }
+    }
+    &__link {
+        color: var(--white);
+        transition: opacity 0.3s ease;
+        
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__block {
+        &--reviews {
+            .footer__item {
+                display: flex;
+                align-items: center;
+                gap: 10rem;
+            }
+        }
+    }
+    
+    &__star-icon {
+        width: 20rem;
+        height: 20rem;
+        flex-shrink: 0;
+    }
+    &__socials {
+        display: flex;
+        align-items: center;
+        gap: 20rem;
+    }
+
+    &__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease;
+            
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+        
+    &__social-icon {
+            width: 22rem;
+            height: 22rem;
+        display: block;
+    }
+    a {
+        color: var(--white);
+        
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    
+    p {
+        color: var(--white);
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12rem;
+        
+        &__main {
+            flex-direction: column;
+            gap: 30rem;
+        }
+        &__info {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20rem;
+            padding: 30rem 0;
+
+            a,p{    
+                color: rgba(248, 248, 248, 0.6);
+            }
+        }
+        &__list-wrapper {
+            gap: 40rem;
+        }
+        
+        * {
+            font-size: 12rem;
+        }
+    }
+}

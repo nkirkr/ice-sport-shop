@@ -1,0 +1,36 @@
+.real-radio {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+}
+
+.custom-radio {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 16rem;
+    height: 16rem;
+    border: 1rem solid var(--line);
+    border-radius: 100%;
+    margin-right: 10rem;
+    vertical-align: text-top;
+    position: relative;
+}
+
+.custom-radio::before {
+    content: '';
+    display: inline-block;
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--accent-light);
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.real-radio:checked + .custom-radio::before {
+    display: inline-block;
+}

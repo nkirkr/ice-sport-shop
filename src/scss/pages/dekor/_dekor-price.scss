@@ -1,0 +1,52 @@
+.dekor-price {
+    &__header {
+        background: var(--grey);
+    }
+    &__item, &__header {
+        padding: 20rem 30rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 20rem;
+        color: var(--black);
+        &:nth-of-type(3) {
+            justify-self: end;
+        }
+    }
+    &__name, &__price {
+        font-weight: 600;
+        font-size: 16rem;
+        letter-spacing: 0.02em;
+        color: #353535;
+    }
+    &__descr {
+        font-size: 16rem;
+        color: #727272;
+    }
+    &__price {
+        justify-self: end;
+        padding-right: 18rem;
+    }
+
+    @media (max-width: 768px) {
+        &__header {
+            display: none;
+        }
+        &__item {
+            grid-template-columns: 1fr;
+            padding: 16rem 16rem 16rem 0;
+            border-bottom: 1rem solid #dfdfdf;
+        }
+        &__name {
+            margin-bottom: 16rem;
+        }
+        &__descr {
+            margin-bottom: 24rem;
+        }
+        &__price {
+            justify-self: start;
+        }
+    }
+}

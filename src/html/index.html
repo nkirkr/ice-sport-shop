@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная</title>
+    <!-- <script src="https://api-maps.yandex.ru/v3/?apikey=cd441c3f-1482-4604-8ca7-6ef974f3a531&lang=ru_RU" defer></script> -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    @@include('../img/sprite.svg') @@include('layout/header.html')
+    <main class="main">
+      @@include('home/hero.html') @@include('home/popular-categories.html')
+      @@include('home/bestsellers.html') @@include('home/reviews.html')
+      @@include('home/about.html') @@include('home/services.html')
+      @@include('home/promo.html') @@include('common/contact.html')
+      @@include('home/map.html')
+    </main>
+    @@include('layout/favorites.html') @@include('layout/cart.html')
+    @@include('layout/overlay.html') @@include('layout/menu-overlay.html')
+    @@include('layout/footer.html')
+    <!-- <script src="./js/main.bundle.js"></script> -->
+    <script src="./js/index.bundle.js"></script>
+  </body>
+</html>

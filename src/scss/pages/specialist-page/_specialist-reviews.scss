@@ -1,0 +1,17 @@
+.specialist-reviews {
+    #reviews-swiper {
+        overflow: visible;
+        padding-right: 0!important;
+        .swiper-slide {
+            height: auto;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        #reviews-swiper {
+            overflow: hidden;
+        }
+    }
+}

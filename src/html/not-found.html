@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>404 – Такой страницы не существует</title>
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+	<body>
+		@@include('../img/sprite.svg')
+		<div class="not-found__wrapper">
+			@@include('layout/header.html')
+			<main class="main">
+				<div class="not-found container">
+					<img src="../img/404.svg" class="not-found__img" />
+					<p class="not-found__text">УПС... Такой страницы не существует</p>
+					<a href="/" class="not-found__btn">Вернуться на главную</a>
+				</div>
+			</main>
+			<footer></footer>
+			@@include('layout/cart.html')
+			@@include('layout/favorites.html')
+			@@include('layout/overlay.html')
+		</div>
+		<script src="./js/main.bundle.js"></script>
+	</body>
+</html>

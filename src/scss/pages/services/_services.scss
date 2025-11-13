@@ -1,0 +1,49 @@
+.services-page__header {
+  margin-bottom: 20rem;
+
+  .services-page__top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40rem;
+  }
+
+  .services-page__text {
+    display: flex;
+    flex-direction: column;
+    gap: 11rem;
+    max-width: 424rem;
+  }
+
+  .services-page__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 36rem;
+    line-height: 1.2;
+    color: var(--dark);
+  }
+
+  .services-page__subtitle {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14rem;
+    line-height: 1.2;
+    color: var(--dark);
+  }
+}
+
+.services-page {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15rem;
+    margin-bottom: 80rem;
+  }
+
+  @media (max-width: 768px) {
+    .services-page__title { font-size: 24rem; }
+    .services-page__subtitle { font-size: 12rem; }
+    &__grid { grid-template-columns: 1fr; gap: 20rem; }
+  }
+}
+

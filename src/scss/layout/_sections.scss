@@ -1,0 +1,12 @@
+.page-section {
+	margin-bottom: 100rem;
+	@media (max-width: 768px) {
+		margin-bottom: 80rem;
+	}
+}
+
+// Для audio и всех секций после нее отступ 80rem
+.page-section.audio,
+.page-section.audio ~ .page-section {
+	margin-bottom: 80rem !important;
+}

@@ -1,0 +1,229 @@
+.bestsellers {
+    margin-bottom: 80rem;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 20rem;
+        gap: 40rem;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 11rem;
+        max-width: 424rem;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 36rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 14rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 18rem;
+        line-height: 1.2;
+        color: var(--dark);
+        text-decoration: none;
+        padding: 10rem 0;
+        border-bottom: 1rem solid var(--dark);
+        transition: opacity 0.3s ease;
+        white-space: nowrap;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15rem;
+        margin-bottom: 30rem;
+    }
+
+    &__catalog-link {
+        display: none;
+        width: 100%;
+        padding: 10rem 0;
+        text-align: center;
+        font-weight: 400;
+        font-size: 18rem;
+        line-height: 1.2;
+        color: var(--dark);
+        text-decoration: none;
+        border-bottom: 1rem solid var(--dark);
+        transition: opacity 0.3s ease;
+
+        &:active {
+            opacity: 0.7;
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 60rem;
+
+        &__header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20rem;
+            margin-bottom: 30rem;
+        }
+
+        &__text {
+            max-width: 100%;
+        }
+
+        &__title {
+            font-size: 24rem;
+        }
+
+        &__subtitle {
+            font-size: 12rem;
+        }
+
+        &__link {
+            display: none;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 20rem;
+            margin-bottom: 30rem;
+        }
+
+        &__catalog-link {
+            display: block;
+            font-size: 16rem;
+        }
+    }
+}
+
+.bestseller-card {
+    &__link {
+        display: flex;
+        flex-direction: column;
+        gap: 20rem;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4rem);
+        }
+    }
+
+    &__image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 460rem;
+        overflow: hidden;
+        background-color: #F3F3F3;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__favorite {
+        position: absolute;
+        top: 12rem;
+        right: 12rem;
+        width: 44rem;
+        height: 44rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--dark);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+
+        img {
+            width: 18rem;
+            height: 18rem;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+    }
+
+    &__sku {
+        font-weight: 300;
+        font-size: 10rem;
+        line-height: 1.2;
+        color: var(--dark-40);
+        margin: 0;
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 16rem;
+        line-height: 1.2;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    &__description {
+        font-weight: 300;
+        font-size: 12rem;
+        line-height: 1.2;
+        color: var(--dark-60);
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        &__image-wrapper {
+            height: 280rem;
+        }
+
+        &__favorite {
+            width: 36rem;
+            height: 36rem;
+            top: 8rem;
+            right: 8rem;
+
+            img {
+                width: 16rem;
+                height: 14rem;
+            }
+        }
+
+        &__sku {
+            font-size: 9rem;
+        }
+
+        &__title {
+            font-size: 14rem;
+        }
+
+        &__description {
+            font-size: 11rem;
+        }
+    }
+}
+

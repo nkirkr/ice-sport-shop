@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Карточка товара</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    @@include('../img/sprite.svg') @@include('layout/header.html')
+    <main class="main">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ul class="breadcrumbs__list">
+            <li><a class="breadcrumbs__link" href="/">Главная</a></li>
+            <li class="breadcrumbs__separator breadcrumbs__separator"></li>
+            <li>
+              <a class="breadcrumbs__link" href="/catalog.html">Товары</a>
+            </li>
+            <li
+              class="breadcrumbs__separator breadcrumbs__separator--current"
+            ></li>
+            <li class="breadcrumbs__current">Карточка товара</li>
+          </ul>
+        </nav>
+
+        <article class="product page-section">
+          <div class="product__top">
+            @@include('product/product-gallery.html')
+            @@include('product/product-info.html')
+          </div>
+
+          @@include('product/specifications.html')
+          @@include('product/similar-products.html')
+        </article>
+      </div>
+    </main>
+
+    @@include('layout/cart.html') @@include('layout/favorites.html')
+    @@include('layout/footer.html') @@include('layout/overlay.html')
+    <script src="./js/main.bundle.js"></script>
+    <script src="./js/product.bundle.js"></script>
+  </body>
+</html>

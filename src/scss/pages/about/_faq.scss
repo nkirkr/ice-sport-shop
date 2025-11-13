@@ -1,0 +1,17 @@
+.about-faq {
+    &__title {
+        margin-bottom: 40rem;
+    }
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 40rem;
+        h3 {
+            max-width: 499rem;
+        }
+        p {
+            max-width: 471rem;
+        }
+    }
+}

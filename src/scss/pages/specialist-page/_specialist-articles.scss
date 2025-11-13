@@ -1,0 +1,21 @@
+.specialist-articles {
+    .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 13rem;
+        .swiper-slide:nth-child(5n+1) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .swiper-wrapper {
+            display: flex;
+            gap: 0;
+            // grid-template-columns: 1fr;
+        }
+        .swiper-slide {
+            width: 100%!important;
+        }
+    }
+}

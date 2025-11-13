@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body class="catalog-page">
+    @@include('../img/sprite.svg') @@include('layout/header.html')
+    @@include('catalog/catalog-hero.html')
+    <main class="main">
+      <div class="catalog__content container">
+        @@include('catalog/items.html')
+      </div>
+      @@include('catalog/catalog-bottom.html')
+    </main>
+    @@include('layout/cart.html') @@include('layout/favorites.html')
+    @@include('layout/footer.html') @@include('layout/overlay.html')
+    @@include('layout/menu-overlay.html')
+    <script src="./js/catalog.bundle.js"></script>
+  </body>
+</html>

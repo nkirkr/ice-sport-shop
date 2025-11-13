@@ -1,0 +1,31 @@
+.subservices {
+    &__title {
+        font-family: 'Albert Sans', sans-serif;
+        font-weight: 400;
+        font-size: 36rem;
+        line-height: 1.2;
+        color: var(--black);
+        margin: 0 0 20rem 0;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15rem;
+    }
+
+    @media (max-width: 768px) {
+        &__title {
+            font-size: 24rem;
+            margin-bottom: 20rem;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 20rem;
+        }
+    }
+}
+
+// service-card стили уже есть в _services.scss на главной странице
+

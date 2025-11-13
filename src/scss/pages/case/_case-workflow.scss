@@ -1,0 +1,56 @@
+.case-workflow {
+    &__title {
+        margin-bottom: 12rem;
+    }
+    &__images {
+        width: 620rem;
+        display: flex;
+        gap: 20rem;
+        flex: 0 0 auto;
+    }
+    &__img {
+        width: 300rem;
+        height: 300rem;
+        object-fit: cover;
+        border-radius: 10rem;
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 97rem;
+    }
+    &__paragraph {
+        margin-bottom: 23rem;
+    }   
+    &__h3 {
+        margin-bottom: 12rem;
+    }
+
+    @media (max-width: 768px) {
+        &__content {
+            flex-direction: column;
+            gap: 20rem;
+        }
+        &__text {
+            order: 0
+        }
+        &__title {
+            font-size: 24rem;
+        }
+        &__paragraph {
+            margin-bottom: 30rem;
+        }
+        &__images {
+            order: -1;
+            width: 100%;
+            display: block;
+            picture:nth-child(2) {
+                display: none;
+            }
+        }
+        &__img {
+            width: 100%;
+            height: 278rem;
+        }
+    }
+}

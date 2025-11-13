@@ -1,0 +1,18 @@
+[data-overlayscrollbars] .os-scrollbar-track {
+    background: var(--line) !important;
+}
+
+[data-overlayscrollbars] .os-scrollbar-handle {
+    background: var(--black) !important;
+}
+
+[data-overlayscrollbars] .os-scrollbar-vertical {
+    width: 5rem !important;
+    height: 100%!important;
+}
+
+/* Если нужно убрать только нижний паддинг */
+[data-overlayscrollbars-viewport] {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}

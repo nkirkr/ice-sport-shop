@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Специалисты</title>
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+	<body>
+		@@include('../img/sprite.svg')
+		@@include('layout/header.html')
+		<main class="main">
+			<nav class="breadcrumbs container">
+			<ul class="breadcrumbs__list">
+				<li><a class="breadcrumbs__link" href="/">Главная</a></li>
+				<li class="breadcrumbs__separator breadcrumbs__separator--current"></li>
+				<li class="breadcrumbs__current">Специалисты</li>
+			</ul>
+			</nav>
+			<div class="specialists container">
+				@@include('specialists/specialists-header.html')
+				@@include('specialists/specialists-list.html')
+				@@include('specialists/specialists-list.html')
+				@@include('common/about.html')
+			</div>
+		</main>
+		@@include('layout/cart.html')
+		@@include('layout/favorites.html')
+		@@include('layout/footer.html')
+		@@include('layout/overlay.html')
+		<script src="./js/main.bundle.js"></script>
+		<script src="./js/index.bundle.js"></script>
+	</body>
+</html>

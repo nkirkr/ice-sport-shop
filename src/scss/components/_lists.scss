@@ -1,0 +1,25 @@
+.list {
+    &--grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18rem;
+        @media (max-width: 768px) {
+            grid-template-columns: none;
+            gap: 20rem;
+        }
+    }
+   
+}
+.product__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13rem;
+}
+
+
+@media (max-width: 768px) {
+    .product__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 21rem;
+    }
+}

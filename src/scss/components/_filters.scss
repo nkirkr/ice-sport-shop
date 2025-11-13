@@ -1,0 +1,65 @@
+.acnav__main-list {
+  display: block;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+    .acnav__main-list {
+        display: none;
+    }
+}
+.acnav__main-list.is-open {
+  display: block;
+}
+
+.acnav__main-label.is-open::after {
+  transform: translateY(-50%) rotate(-180deg);
+}
+[hidden] {
+    display: none;
+    visibility: hidden;
+}
+.acnav {
+    color: var(--black);
+}
+.acnav__link,
+.acnav__label {
+    text-align: start;
+    display: block;
+    font-size: 16rem;
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.25s ease-in, background-color 0.25s ease-in;
+    padding: 10rem 0;
+}
+.acnav__list--level1 {
+    font-size: 18rem;
+}
+.acnav__link--level2,
+.acnav__label--level2 {
+    padding: 10rem 20rem;
+    font-size: 14rem;
+}
+.acnav__link--level3,
+.acnav__label--level3 {
+    padding: 10rem 40rem;
+    font-weight: 400;
+    font-size: 14rem;
+    color: var(--text);
+}
+.acnav__link--level4,
+.acnav__label--level4 {
+    padding-left: 7em;
+}
+.acnav__list--level2,
+.acnav__list--level3,
+.acnav__list--level4 {
+    display: none;
+}
+.acnav .is-open > .acnav__list--level2,
+.acnav .is-open > .acnav__list--level3,
+.acnav .is-open > .acnav__list--level4 {
+    display: block;
+}
+.has-children.is-open > .acnav__label {
+  font-weight: 700;
+}

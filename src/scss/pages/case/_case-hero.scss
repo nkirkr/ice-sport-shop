@@ -1,0 +1,37 @@
+.case-hero {
+    &__content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__img {
+        display: grid;
+        gap: 4rem;
+        width: 478rem;
+        flex-shrink: 0;
+    }
+    &__subtitle {
+        margin-bottom: 20rem;
+    }
+    &__btn {
+        padding-top: 40rem;
+    }
+
+    @media (max-width: 768px) {
+        &__content {
+            flex-direction: column;
+        }
+        &__img {
+            width: 100%;
+            order: -1;
+            margin-bottom: 20rem;
+        }
+        &__text {
+            display: contents;
+        }
+        &__title {
+            order: -2;
+            font-size: 32rem;
+        }
+    }
+}

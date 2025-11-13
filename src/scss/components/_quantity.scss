@@ -1,0 +1,42 @@
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--grey);
+    border-radius: 40rem;
+    padding: 4rem;
+    width: 104rem;
+    height: 40rem;
+    &__btn {
+        flex-shrink: 0;
+        background: var(--dark);
+        border-radius: 16rem;
+        padding: 6rem;
+        width: 32rem;
+        height: 32rem;
+        border: none;
+        cursor: pointer;
+        transition: .2s ease-in;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+        
+        svg {
+            width: 20rem;
+            height: 20rem;
+            color: var(--white);
+        }
+    }
+    &__input {
+        text-align: center;
+        width: 32rem;
+        flex-grow: 0;
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}

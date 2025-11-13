@@ -1,0 +1,40 @@
+.video {
+    &__wrapper {
+        position: relative;
+    }
+    &__source {
+        height: 444rem;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 16rem;
+    }
+    &__play {
+        width: 80rem;
+        height: 80rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease-in;
+        
+        svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    &__caption {
+        font-size: 16rem;
+    }
+
+    @media (max-width: 768px) {
+        &__source {
+            height: 200rem;
+            border-radius: 0;
+            margin-bottom: 10rem;
+        }
+    }
+}

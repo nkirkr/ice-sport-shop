@@ -1,0 +1,38 @@
+.case-testimonial {
+    &__card {
+        width: 356rem;
+        background: var(--grey);
+        border-radius: 20rem;
+        padding: 20rem;
+    }
+    &__name {
+        margin-bottom: 12rem;
+    }
+    &__text {
+        margin-bottom: 20rem;
+    }
+    &__rating {
+        position: relative;
+        width: 83rem;
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url(../../../img/icons/g-star.svg);
+            background-size: contain;
+            width: 14rem;
+            height: 14rem;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__title {
+            font-weight: 600;
+        }
+        &__card {
+            width: 100%;
+        }
+    }
+}

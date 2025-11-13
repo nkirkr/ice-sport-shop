@@ -1,0 +1,19 @@
+<section class="specialist-reviews container page-section">
+    <h2 class="section-title">Отзывы о специалисте</h2>
+    <div class="specialist-reviews__swiper reviews__swiper swiper" id="reviews-swiper">
+        <div class="swiper-wrapper">
+            @@include('../cards/reviews-item.html', {'review': 'Большое спасибо всё прошло очень хорошо. Обязательно ещё обращусь', 'name': 'Имя клиента', 'product': 'Карнизы на кухню', 'image-webp': '/img/about.webp', 'image-jpg': '/img/about.jpg'})
+            @@include('../cards/reviews-item.html', {'review': 'Большое спасибо всё прошло очень хорошо. Обязательно ещё обращусь', 'name': 'Длинное имя клиента', 'product': 'Длинные карнизы на очень большую кухню', 'image-webp': '/img/about.webp', 'image-jpg': '/img/about.jpg'})
+            @@include('../cards/reviews-item.html', {'review': 'Большое большое большое большое большое большое большое большое спасибо всё прошло очень хорошо. Обязательно ещё обращусь', 'name': 'Очень-очень длинное имя клиента', 'product': 'Карнизы на кухню', 'image-webp': '/img/about.webp', 'image-jpg': '/img/about.jpg'})
+            @@include('../cards/reviews-item.html', {'review': 'Большое большое большое большое спасибо всё прошло очень хорошо. Обязательно ещё обращусь', 'name': 'Имя клиента', 'product': 'Карнизы на кухню', 'image-webp': '/img/about.webp', 'image-jpg': '/img/about.jpg'})
+        </div>
+        <div class="swiper-controls">
+            <button class="swiper-btn" id="reviews-prev">
+                <img src="/img/icons/swiper-left.svg" alt="">
+            </button>
+            <button class="swiper-btn" id="reviews-next">
+                <img src="/img/icons/swiper-right.svg" alt="">
+            </button>
+        </div>
+    </div>
+</section>

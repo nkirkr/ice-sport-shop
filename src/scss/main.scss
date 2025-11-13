@@ -1,0 +1,26 @@
+/* Base */
+@import "./base/reset";
+@import "./base/fonts";
+@import "./base/vars";
+@import "./base/base";
+@import "./base/typography";
+
+@import "./layout/*.scss";
+@import "./utils/*.scss";
+
+@import "./pages/home/index";
+@import "./pages/blog/*.scss";
+@import "./pages/article/*.scss";
+@import "./pages/portfolio/*.scss";
+@import "./pages/promo/*.scss";
+@import "./pages/catalog/*.scss";
+@import "./pages/product/*.scss";
+@import "./pages/case/*.scss";
+@import "./pages/not-found/*.scss";
+@import "./pages/specialists/*.scss";
+@import "./pages/about/*.scss";
+@import "./pages/specialist-page/*.scss";
+@import "./pages/contacts-page/*.scss";
+@import "./pages/dekor/*.scss";
+@import "./pages/services/*.scss";
+@import "./components/index";

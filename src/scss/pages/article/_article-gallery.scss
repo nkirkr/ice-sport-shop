@@ -1,0 +1,118 @@
+.article-gallery {
+    &__header {
+        margin-bottom: 32rem;
+    }
+    
+    &__title {
+        margin-bottom: 0;
+    }
+    
+    &__wrapper {
+        position: relative;
+        padding: 0;
+    }
+    
+    &__slider {
+        width: 100%;
+        overflow: hidden;
+        
+        .swiper-slide {
+            min-height: 319rem;
+        }
+    }
+    
+    &__control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50rem;
+        height: 51rem;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--dark-80);
+        border: 1px solid var(--white-alpha-20);
+        border-radius: 0;
+        padding: 1rem;
+        cursor: pointer;
+        transition: opacity 0.2s;
+
+        img {
+            width: 13rem;
+            height: 13rem;
+            display: block;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &.swiper-button-disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        &.swiper-button-lock {
+            display: flex !important;
+        }
+
+        &.article-gallery__prev {
+            left: 0;
+            
+            img {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.article-gallery__next {
+            right: 0;
+        }
+    }
+    
+    &__image {
+        margin-bottom: 20rem;
+        width: 100%;
+        height: 280rem;
+        object-fit: cover;
+    }
+    
+    &__caption {
+        font-size: 16rem;
+        color: var(--text);
+    }
+   
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        
+        &__header {
+            display: contents;
+        }
+        
+        &__wrapper {
+            padding: 0;
+        }
+        
+        &__slider {
+            width: 100%;
+        }
+        
+        &__title {
+            margin-bottom: 20rem;
+        }
+        
+        &__control {
+            width: 32rem;
+            height: 32rem;
+
+            &.article-gallery__prev {
+                left: 0;
+            }
+
+            &.article-gallery__next {
+                right: 0;
+            }
+        }
+    }
+}
