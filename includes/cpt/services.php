@@ -7,7 +7,7 @@ add_action('init', function() {
         'labels' => [
             'name'          => 'Услуги',
             'singular_name' => 'Услуга',
-            'breadcrumbs_label' => 'Наши услуги',
+            'breadcrumbs_label' => 'Услуги',
             'add_new'       => 'Добавить услугу',
             'add_new_item'  => 'Добавить новую услугу',
             'edit_item'     => 'Редактировать услугу',

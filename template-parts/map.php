@@ -14,28 +14,38 @@
     <div class="map-section__contacts">
       <div class="container">
         <div class="map-section__contacts-wrapper">
+          <?php if ( !empty($GLOBALS['contacts']['phone']) ) : ?>
           <div class="map-section__contact-item">
             <h3 class="map-section__contact-title">Адрес</h3>
             <p class="map-section__contact-text">
-              Москва, ул. Строителей дом 5
+              <?php echo esc_html($GLOBALS['contacts']['address']); ?>
             </p>
           </div>
+          <?php endif; ?>
+          <?php if ( !empty($GLOBALS['contacts']['phone']) ) : ?>
           <div class="map-section__contact-item">
             <h3 class="map-section__contact-title">Телефон</h3>
-            <p class="map-section__contact-text">+7 (999) 999-99-99</p>
+            <p class="map-section__contact-text"><?php echo esc_html($GLOBALS['contacts']['phone']); ?></p>
           </div>
+          <?php endif; ?>
+          <?php if ( !empty($GLOBALS['contacts']['phone']) ) : ?>
           <div class="map-section__contact-item">
             <h3 class="map-section__contact-title">Telegram</h3>
-            <p class="map-section__contact-text">@primer</p>
+            <p class="map-section__contact-text"><?php echo esc_html($GLOBALS['contacts']['telegram']); ?></p>
           </div>
+          <?php endif; ?>
+          <?php if ( !empty($GLOBALS['contacts']['phone']) ) : ?>
           <div class="map-section__contact-item">
             <h3 class="map-section__contact-title">Whatsapp</h3>
-            <p class="map-section__contact-text">@primer</p>
+            <p class="map-section__contact-text"><?php echo esc_html($GLOBALS['contacts']['whatsapp']); ?></p>
           </div>
+          <?php endif; ?>
+          <?php if ( !empty($GLOBALS['contacts']['phone']) ) : ?>
           <div class="map-section__contact-item">
             <h3 class="map-section__contact-title">Instagram</h3>
-            <p class="map-section__contact-text">@primer</p>
+            <p class="map-section__contact-text"><?php echo esc_html($GLOBALS['contacts']['instagram']); ?></p>
           </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>

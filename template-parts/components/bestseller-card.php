@@ -12,7 +12,7 @@ if ( $sale_price && $regular_price && $sale_price < $regular_price ) {
 ?>
 
 <article class="bestseller-card">
-<a href="/product.html" class="bestseller-card__link">
+<a href="<?php the_permalink(); ?>" class="bestseller-card__link">
     <div class="bestseller-card__image-wrapper">
     <img
         src="<?php echo esc_url( wp_get_attachment_image_url($product->get_image_id(), 'full') ); ?>"

@@ -17,7 +17,11 @@ if ( ! defined( '_S_VERSION' ) ) {
  */
 require_once get_template_directory() . '/includes/scripts.php';
 require_once get_template_directory() . '/includes/cpt/cpt.php';
-// require_once get_template_directory() . '/includes/breadcrumbs.php';
+require_once get_template_directory() . '/includes/breadcrumbs.php';
+require_once get_template_directory() . '/includes/hooks.php';
+require_once get_template_directory() . '/includes/woocommerce-hooks.php';
+require_once get_template_directory() . '/includes/favorites.php';
+require_once get_template_directory() . '/includes/globals.php';
 // require_once get_template_directory() . '/includes/globals.php';
 
 

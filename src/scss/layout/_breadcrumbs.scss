@@ -56,3 +56,15 @@
         }
     }
 }
+
+.woocommerce-breadcrumb {
+  padding: 20rem 0 40rem;
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+
+  a {
+    color: var(--text);
+  }
+}
+

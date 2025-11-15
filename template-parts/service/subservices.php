@@ -1,64 +1,29 @@
+<?php 
+$subservices = carbon_get_the_post_meta('subservices_list');
+$subservices_ids = wp_list_pluck($subservices, 'id');
+$subservices_query_args = [
+    'post_type' => 'services',
+    'post__in' => $subservices_ids,
+    'orderby' => 'post__in',
+];
+
+$subservices_query = new WP_Query( $subservices_query_args );
+if (!empty($subservices_ids)) 
+
+if ($subservices_query->have_posts()) : ?>
+
 <section class="subservices page-section">
   <div class="container">
     <h2 class="subservices__title">Подуслуги</h2>
     <div class="subservices__grid">
-      <article class="service-card">
-        <a href="./services-single.html" class="service-card__link">
-          <div class="service-card__image-wrapper">
-            <img
-              src="/img/hero.png"
-              alt="Услуга"
-              class="service-card__image"
-              loading="lazy"
-            />
-          </div>
-          <div class="service-card__info">
-            <h3 class="service-card__title">Услуга</h3>
-            <p class="service-card__description">
-              С развитием технологий каждое новое открытие становится
-              значительным шагом вперёд.
-            </p>
-          </div>
-        </a>
-      </article>
-      <article class="service-card">
-        <a href="./services-single.html" class="service-card__link">
-          <div class="service-card__image-wrapper">
-            <img
-              src="/img/hero.png"
-              alt="Услуга"
-              class="service-card__image"
-              loading="lazy"
-            />
-          </div>
-          <div class="service-card__info">
-            <h3 class="service-card__title">Услуга</h3>
-            <p class="service-card__description">
-              С развитием технологий каждое новое открытие становится
-              значительным шагом вперёд.
-            </p>
-          </div>
-        </a>
-      </article>
-      <article class="service-card">
-        <a href="./services-single.html" class="service-card__link">
-          <div class="service-card__image-wrapper">
-            <img
-              src="/img/hero.png"
-              alt="Услуга"
-              class="service-card__image"
-              loading="lazy"
-            />
-          </div>
-          <div class="service-card__info">
-            <h3 class="service-card__title">Услуга</h3>
-            <p class="service-card__description">
-              С развитием технологий каждое новое открытие становится
-              значительным шагом вперёд.
-            </p>
-          </div>
-        </a>
-      </article>
+
+      <?php while( $subservices_query->have_posts() ) : $subservices_query->the_post(); ?>
+
+        <?php get_template_part( 'template-parts/components/service-card' ); ?>
+
+      <?php endwhile; wp_reset_postdata(); ?>
     </div>
   </div>
 </section>
+
+<?php endif; ?>

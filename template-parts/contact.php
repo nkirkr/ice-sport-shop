@@ -1,13 +1,16 @@
 <section class="contact page-section" id="contact-section">
   <div class="contact__wrapper">
     <div class="contact__content">
-      <h2 class="contact__title">Форма обратной связи</h2>
+      <h2 class="contact__title"><?php echo esc_html( carbon_get_theme_option('contact_title') ); ?></h2>
       <p class="contact__subtitle">
-        Заполните данные и мы свяжемся с вами в скором времени
+        <?php echo esc_html( carbon_get_theme_option('contact_title') ); ?>
       </p>
       <button class="contact__button" data-modal-open="callback">
         Перезвоните мне
       </button>
+    </div>
+    <div class="contact__image">
+      <img src="<?php echo esc_url( wp_get_attachment_url( carbon_get_theme_option('contact_image') ) ); ?>" alt="">
     </div>
   </div>
 </section>

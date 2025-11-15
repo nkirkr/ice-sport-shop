@@ -322,13 +322,13 @@
             <a class="header__nav-link" href="<?php echo get_post_type_archive_link( 'services' ); ?>">Услуги</a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="/promo.html">Акции</a>
+            <a class="header__nav-link" href="<?php echo get_post_type_archive_link( 'promo' ); ?>">Акции</a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="/blog.html">Блог</a>
+            <a class="header__nav-link" href="<?php echo get_post_type_archive_link( 'blog' ); ?>">Блог</a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link" href="/contacts.html">Контакты</a>
+            <a class="header__nav-link" href="<?php echo get_the_permalink(114); ?>">Контакты</a>
           </li>
         </ul>
       </nav>
@@ -349,6 +349,7 @@
               alt=""
               width="20"
               height="20"
+              class="default-icon"
             />
           </button>
           <form class="header__search">
@@ -367,6 +368,7 @@
             alt=""
             width="18"
             height="18"
+            class="default-icon"
           />
         </button>
         <button
@@ -375,7 +377,13 @@
           type="button"
           id="cart-btn"
         >
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/build/img/icons/header/cart.svg' ); ?>" alt="" width="18" height="18" />
+          <img 
+          src="<?php echo esc_url( get_template_directory_uri() . '/build/img/icons/header/cart.svg' ); ?>" 
+          alt="" 
+          width="18" 
+          height="18" 
+          class="default-icon"
+          />
         </button>
       </div>
 

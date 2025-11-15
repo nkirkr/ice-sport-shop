@@ -29,8 +29,8 @@
 
     &__row {
         border-bottom: 1rem solid var(--dark-40);
-
-        &:last-child {
+       
+        &:not(:only-child):last-child {
             border-bottom: none;
         }
     }

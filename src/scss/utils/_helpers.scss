@@ -63,6 +63,9 @@
 	width: 18rem;
 	height: 18rem;
 }
+.woocommerce-notices-wrapper {
+	display: none;
+}
 @media (max-width: 768px) {
 	.form-group {
 		padding: 10rem 0;

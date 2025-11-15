@@ -4,6 +4,7 @@ import "./modules/search.js";
 import "./modules/catalog-menu.js";
 import "./modules/mob-menu.js";
 import "./modules/audio";
+import "./modules/video";
 import { initModals } from "./modules/modal";
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
