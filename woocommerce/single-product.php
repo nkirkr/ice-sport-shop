@@ -52,13 +52,13 @@ get_header(); ?>
 </div>
 
 <?php
-get_template_part( 'template-parts/common/cart' );
-get_template_part( 'template-parts/common/favorites' );
-get_template_part( 'template-parts/common/overlay' );
-get_template_part( 'template-parts/common/menu-overlay' );
-get_template_part( 'template-parts/common/cart-popup' );
-get_template_part( 'template-parts/common/success-popup' );
-get_template_part( 'template-parts/common/consultation-popup' );
+get_template_part( 'template-parts/cart' );
+get_template_part( 'template-parts/favorites' );
+// get_template_part( 'template-parts/common/overlay' );
+// get_template_part( 'template-parts/common/menu-overlay' );
+// get_template_part( 'template-parts/common/cart-popup' );
+// get_template_part( 'template-parts/common/success-popup' );
+// get_template_part( 'template-parts/common/consultation-popup' );
 get_footer();
 
 

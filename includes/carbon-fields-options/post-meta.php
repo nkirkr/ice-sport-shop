@@ -87,9 +87,10 @@ Container::make('post_meta', 'Дополнительно')
                 ])
                 ->set_help_text('Выберите товары, которые отличаются цветом.'),
         ])
-        ->add_tab('Блок текст + фото', [
-            Field::make('image', 'about_image', 'Фото'),
-            Field::make('rich_text', 'about_text', 'Текст'),
+        ->add_tab('SEO-блок', [
+            Field::make('image', 'seo_photo_1', 'Фото')->set_width(50),
+            Field::make('image', 'seo_photo_2', 'Фото')->set_width(50),
+            Field::make('rich_text', 'seo_text', 'Текст'),
         ])
         ->add_tab('С этим товаром часто покупают', [
              Field::make('association', 'product_additional', 'Выберите до 4-х товаров')

@@ -21,7 +21,7 @@ if ($query->have_posts()) : ?>
         <h2 class="promo__title"><?php echo esc_html( carbon_get_the_post_meta('promo_title') ); ?></h2>
         <p class="promo__subtitle"><?php echo esc_html( carbon_get_the_post_meta('promo_subtitle') ); ?></p>
       </div>
-      <a href="/promo.html" class="promo__link">Все акции</a>
+      <a href="<?php echo get_post_type_archive_link( 'promo' ); ?>" class="promo__link">Все акции</a>
     </div>
     <div class="promo__grid">
 
@@ -32,7 +32,7 @@ if ($query->have_posts()) : ?>
     <?php endwhile; wp_reset_postdata(); ?>
 
     </div>
-    <a href="/promo.html" class="promo__catalog-link">Все акции</a>
+    <a href="<?php echo get_post_type_archive_link( 'promo' ); ?>" class="promo__catalog-link">Все акции</a>
   </div>
 </section>
 

@@ -36,7 +36,9 @@
     &__hashtags {
         text-decoration: underline;
         text-decoration-skip-ink: none;
-        color: var(--accent-light);
+        a {
+            color: #7d7d7d;
+        }
         font-weight: 500;
     }
 

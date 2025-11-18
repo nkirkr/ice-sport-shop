@@ -5,8 +5,8 @@
     background-color: #F8F8F8;
     position: absolute;
     margin-top: 18rem;
-    left: 50%;
-    transform: translateX(-50%);
+    // left: 50%;
+    transform: translateX(-60rem);
     box-shadow: 0 4rem 15rem rgba(0, 0, 0, 0.05);
     border-radius: 0;
     max-height: 0;
@@ -101,7 +101,7 @@
         padding: 0;
         z-index: 9999;
         width: 492rem;
-        min-height: 279rem;
+        min-height: fit-content;
         
         &-content {
             display: flex;

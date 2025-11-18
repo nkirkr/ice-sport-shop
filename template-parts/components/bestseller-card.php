@@ -20,8 +20,9 @@ if ( $sale_price && $regular_price && $sale_price < $regular_price ) {
         class="bestseller-card__image"
     />
     <button
-        class="bestseller-card__favorite"
+        class="bestseller-card__favorite to-favorite"
         aria-label="Добавить в избранное"
+        data-id="<?php echo esc_attr( $product->get_id() ); ?>"
     >
         <img
         src="<?php echo esc_url( get_template_directory_uri() . '/build/img/icons/bestsellers/favourite.svg' ); ?>"

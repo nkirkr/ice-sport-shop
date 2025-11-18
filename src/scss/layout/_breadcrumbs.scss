@@ -4,12 +4,12 @@
     &__list {
         display: flex;
         align-items: center;
-        gap: 0;
+        gap: 8rem;
         flex-wrap: wrap;
     }
     
     &__separator {
-        margin: 0 8rem;
+        // margin: 0 8rem;
         color: var(--text);
         
         &::before {

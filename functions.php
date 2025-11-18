@@ -22,7 +22,8 @@ require_once get_template_directory() . '/includes/hooks.php';
 require_once get_template_directory() . '/includes/woocommerce-hooks.php';
 require_once get_template_directory() . '/includes/favorites.php';
 require_once get_template_directory() . '/includes/globals.php';
-// require_once get_template_directory() . '/includes/globals.php';
+require_once get_template_directory() . '/includes/filtration.php';
+require_once get_template_directory() . '/includes/cart.php';
 
 
 
@@ -173,3 +174,10 @@ function icesport_widgets_init() {
 }
 add_action( 'widgets_init', 'icesport_widgets_init' );
 
+
+function get_top_level_category( $cat ) {
+    while ( $cat->parent != 0 ) {
+        $cat = get_term( $cat->parent, 'product_cat' );
+    }
+    return $cat;
+}

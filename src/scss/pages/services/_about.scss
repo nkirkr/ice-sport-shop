@@ -12,7 +12,7 @@
         grid-row: 1;
         display: flex;
         flex-direction: column;
-        gap: 30rem;
+        // gap: 30rem;
     }
 
     &__right {
@@ -20,7 +20,7 @@
         grid-row: 2;
         display: flex;
         flex-direction: column;
-        gap: 30rem;
+        // gap: 30rem;
     }
 
     &__image {
@@ -51,8 +51,10 @@
     &__block {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 8rem;
+        width: 100%;
+        max-width: 100%;
     }
 
     &__title {
@@ -63,6 +65,10 @@
         color: var(--black);
         margin: 0;
         align-self: stretch;
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     &__text {
@@ -72,6 +78,10 @@
         line-height: 1.4;
         color: var(--dark-60);
         margin: 0;
+        width: 100%;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     &__quote {

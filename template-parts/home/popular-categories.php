@@ -14,7 +14,7 @@ $popular_categories_ids = wp_list_pluck($popular_categories, 'id');
           <?php echo esc_html( carbon_get_the_post_meta('popular_subtitle') ); ?>
         </p>
       </div>
-      <a href="/catalog.html" class="popular-categories__link">Весь каталог</a>
+      <!-- <a href="/catalog.html" class="popular-categories__link">Весь каталог</a> -->
     </div>
     <div class="popular-categories__grid">
 
@@ -36,16 +36,16 @@ $popular_categories_ids = wp_list_pluck($popular_categories, 'id');
               class="category-card__image"
             />
           </div>
-          <h3 class="category-card__title">Название категории</h3>
+          <h3 class="category-card__title"><?php echo esc_html($term->name); ?></h3>
         </a>
       </article>
 
       <?php endforeach; ?>
 
     </div>
-    <a href="/catalog.html" class="popular-categories__mobile-link"
+    <!-- <a href="/catalog.html" class="popular-categories__mobile-link"
       >Весь каталог</a
-    >
+    > -->
   </div>
 </section>
 

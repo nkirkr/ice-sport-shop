@@ -2,7 +2,7 @@
   <div class="container">
     <div class="service-process__content">
       <!-- Левая колонка -->
-      <div class="service-process__left">
+      <div class="service-process__left user-text">
           <?php echo wpautop( carbon_get_the_post_meta('process_text') ); ?>
       </div>
 

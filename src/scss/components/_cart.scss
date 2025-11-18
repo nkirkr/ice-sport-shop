@@ -16,7 +16,7 @@
             color: var(--black);
         }
         &-btn {
-            background-color: var(--accent);
+            background: var(--black);
             border-radius: 50rem;
             padding: 10rem 20rem;
             width: 100%;
@@ -32,7 +32,7 @@
             padding-left: 92rem;
         }
         &__checkout {
-            margin-top: 30rem;
+            // margin-top: 30rem;
             &-info {
                 font-size: 14rem;
             }

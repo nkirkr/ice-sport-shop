@@ -30,7 +30,7 @@
             loading="lazy"
         />
         </div>
-        <div class="promo-single__terms">
+        <div class="promo-single__terms user-text">
             <?php echo wpautop( carbon_get_the_post_meta('promo_main_text') ); ?>
         </div>
     </div>

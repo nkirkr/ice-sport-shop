@@ -250,3 +250,31 @@
         }
     }
 }
+
+.catalog__card-properties {
+    display: flex;
+    flex-direction: column;
+}
+.catalog__card-properties-list {
+    font-size: 12rem;
+    color: var(--accent);
+    display: inline;
+    flex-wrap: wrap;
+    gap: 0.3em;
+}
+.catalog__card-properties-list li {
+    list-style: disc;
+    display: inline;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    display: inline; 
+}
+
+.catalog__card-properties-list li::after {
+    content: " • ";
+    color: var(--accent);
+}
+
+.catalog__card-properties-list li:last-child::after {
+    content: "";
+}

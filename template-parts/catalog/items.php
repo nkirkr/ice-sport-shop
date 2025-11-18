@@ -45,7 +45,7 @@ $current_cat = get_queried_object();
         </svg>
       </button>
       <button class="catalog__view-btn catalog__view-btn--list" aria-label="Список">
-        <img src="/img/icons/catalog/stripes.svg" alt="" width="20" height="20" />
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/build/img/icons/catalog/stripes.svg' ); ?>" alt="" width="20" height="20" />
       </button>
     </div>
   </div>
@@ -70,183 +70,50 @@ $current_cat = get_queried_object();
         />
       </svg>
     </button>
-    <?php echo woocommerce_result_count(); ?>
+    <p class="catalog__count">
+        <?php
+        global $wp_query;
+
+        $found_posts   = intval( $wp_query->found_posts );
+        $per_page      = intval( $wp_query->get( 'posts_per_page' ) );
+        $shown_to      = min( $per_page, $found_posts );
+
+        if ( $found_posts > 0 ) {
+            printf( 'Товаров 1–%d из %d', $shown_to, $found_posts );
+        } else {
+            echo '';
+        }
+        ?>
+    </p>
     <div class="catalog__sorting">
       <div class="catalog__sorting-list">
         <div class="catalog__sorting-item">
           <p>На странице:</p>
           <div class="custom-dropdown" data-name="pageSize3">
-            <div class="dropdown-selected"><span>50</span></div>
+            <div class="dropdown-selected"><span>5</span></div>
             <div class="dropdown-options">
+              <div class="dropdown-option" data-value="5">5</div>
+              <div class="dropdown-option" data-value="10">10</div>
               <div class="dropdown-option" data-value="20">20</div>
-              <div class="dropdown-option" data-value="50">50</div>
-              <div class="dropdown-option" data-value="100">100</div>
             </div>
           </div>
         </div>
         <div class="catalog__sorting-item">
-          <p>Сортировка:</p>
-          <div class="custom-dropdown" data-name="pageSize1">
-            <div class="dropdown-selected"><span>Дорогие</span></div>
-            <div class="dropdown-options">
-              <div class="dropdown-option" data-value="Недорогие">
-                Недорогие
-              </div>
-              <div class="dropdown-option" data-value="Очень-очень дорогие">
-                Очень-очень дорогие
-              </div>
-              <div class="dropdown-option" data-value="Очень дорогие">
-                Очень дорогие
-              </div>
+            <p>Сортировка:</p>
+            <div class="custom-dropdown" data-name="orderby">
+                <div class="dropdown-selected"><span data-value="price-asc">Дешевые</span></div>
+                <div class="dropdown-options">
+                    <div class="dropdown-option" data-value="date">Новинки</div>
+                    <div class="dropdown-option" data-value="price-asc">Дешевые</div>
+                    <div class="dropdown-option" data-value="price-desc">Дорогие</div>
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <!-- Мобильные фильтры (как в блоге) -->
-  <div class="catalog__filters-wrapper">
-    <div class="catalog-filters">
-      <div class="catalog-filters-wrapper acnav">
-        <div class="acnav__main-list">
-          <section class="catalog-filters nav-wrap">
-            <!-- Сортировка -->
-            <div class="catalog-filters__section">
-              <p class="catalog-filters__title categories-title acnav__main-label">
-                Сортировка
-                <img src="/img/icons/dropdown.svg" alt="" width="18" height="18" class="catalog-filters__arrow" />
-              </p>
-              <div class="catalog-filters__content">
-                <div class="catalog-filters__select">
-                  <span>Выбрать</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Категории -->
-            <div class="catalog-filters__section">
-              <p class="catalog-filters__title categories-title acnav__main-label">
-                Категории
-                <img src="/img/icons/dropdown.svg" alt="" width="18" height="18" class="catalog-filters__arrow" />
-              </p>
-              <div class="catalog-filters__categories acnav" role="navigation">
-                <div class="acnav__main-list">
-                  <ul class="acnav__list acnav__list--level1">
-                    <li class="catalog-filters__categories-item has-children">
-                      <div class="acnav__label">Категории</div>
-                    </li>
-                  </ul>
-                  <ul class="acnav__list acnav__list--level1">
-                    <li class="catalog-filters__categories-item has-children">
-                      <div class="acnav__label">Категории</div>
-                    </li>
-                  </ul>
-                  <ul class="acnav__list acnav__list--level1">
-                    <li class="catalog-filters__categories-item has-children">
-                      <div class="acnav__label">Категории</div>
-                    </li>
-                  </ul>
-                  <ul class="acnav__list acnav__list--level1">
-                    <li class="catalog-filters__categories-item has-children">
-                      <div class="acnav__label">Категории</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Подкатегория -->
-            <div class="catalog-filters__section">
-              <p class="catalog-filters__title categories-title acnav__main-label">
-                Подкатегория
-                <img src="/img/icons/dropdown.svg" alt="" width="18" height="18" class="catalog-filters__arrow" />
-              </p>
-              <div class="catalog-filters__categories acnav" role="navigation">
-                <div class="acnav__main-list">
-                  <ul class="acnav__list acnav__list--level1">
-                    <li class="catalog-filters__categories-item has-children">
-                      <div class="acnav__label">Подкатегория</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Цена -->
-            <div class="catalog-filters__section">
-              <p class="catalog-filters__title categories-title acnav__main-label">
-                Цена
-                <img src="/img/icons/dropdown.svg" alt="" width="18" height="18" class="catalog-filters__arrow" />
-              </p>
-              <div class="catalog-filters__categories acnav" role="navigation">
-                <div class="acnav__main-list">
-                  <div class="catalog-filters__range">
-                    <input type="number" placeholder="От" />
-                    <input type="number" placeholder="До" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Размер -->
-            <div class="catalog-filters__section">
-              <p class="catalog-filters__title categories-title acnav__main-label">
-                Размер
-                <img src="/img/icons/dropdown.svg" alt="" width="18" height="18" class="catalog-filters__arrow" />
-              </p>
-              <div class="catalog-filters__categories acnav" role="navigation">
-                <div class="acnav__main-list">
-                  <ul class="acnav__list acnav__list--level1">
-                    <li class="catalog-filters__categories-item has-children">
-                      <div class="acnav__label">Размер</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Цвет -->
-            <div class="catalog-filters__section">
-              <p class="catalog-filters__title categories-title acnav__main-label">
-                Цвет
-                <img src="/img/icons/dropdown.svg" alt="" width="18" height="18" class="catalog-filters__arrow" />
-              </p>
-              <div class="catalog-filters__categories acnav" role="navigation">
-                <div class="acnav__main-list">
-                  <ul class="acnav__list acnav__list--level1">
-                    <li class="catalog-filters__categories-item has-children">
-                      <div class="acnav__label">Цвет</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Другое -->
-            <div class="catalog-filters__section">
-              <p class="catalog-filters__title categories-title acnav__main-label">
-                Другое
-                <img src="/img/icons/dropdown.svg" alt="" width="18" height="18" class="catalog-filters__arrow" />
-              </p>
-              <div class="catalog-filters__categories acnav" role="navigation">
-                <div class="acnav__main-list">
-                  <ul class="acnav__list acnav__list--level1">
-                    <li class="catalog-filters__categories-item has-children">
-                      <div class="acnav__label">Другое</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <div class="catalog-filters__actions">
-          <button class="catalog-filters__reset" type="button">Сбросить фильтры</button>
-          <button class="catalog-filters__apply" type="button">Применить</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <?php get_template_part('template-parts/catalog/mobile-filters'); ?>
   
   <!-- Десктопные фильтры -->
   <?php get_template_part('template-parts/catalog/desktop-filters'); ?>
@@ -263,7 +130,7 @@ $current_cat = get_queried_object();
   <?php else : ?>
       <?php do_action( 'woocommerce_no_products_found' ); ?>
   <?php endif; ?>
-  <div class="catalog__show-more-wrapper">
+  <!-- <div class="catalog__show-more-wrapper">
   <button class="catalog__show-more btn-show-more">Показать ещё</button>
   </div>
   <nav class="pagination" aria-label="Пагинация">
@@ -298,5 +165,5 @@ $current_cat = get_queried_object();
         </button>
       </li>
     </ul>
-  </nav>
+  </nav> -->
 </div>

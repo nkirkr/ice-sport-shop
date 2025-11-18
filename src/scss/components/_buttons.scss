@@ -2,15 +2,15 @@ button {
   transition: .2s ease-in;
 }
 .accent-btn {
-  background-color: var(--accent);
+  // background-color: var(--accent);
   color: var(--white);
   border-radius: 50rem;
-  &:hover {
-    background-color: var(--accent-dark);
-  }
-  &:disabled {
-    background: var(--accent-30);
-  }
+  // &:hover {
+  //   background-color: var(--accent-dark);
+  // }
+  // &:disabled {
+  //   background: var(--accent-30);
+  // }
 }
 
 .btn-double {

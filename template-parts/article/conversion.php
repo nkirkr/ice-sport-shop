@@ -9,7 +9,7 @@ if (!empty($text) && !empty($image)) : ?>
       <div class="conversion__picture">
         <img class="conversion__image" src="<?php echo esc_url( $image ); ?>" alt="" />
       </div>
-    <div class="conversion__text">
+    <div class="conversion__text user-text">
       <?php echo wpautop( $text ) ; ?>
       <button
         class="conversion__button"

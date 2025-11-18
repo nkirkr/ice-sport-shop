@@ -23,7 +23,7 @@ if ($query->have_posts()) : ?>
           <?php echo esc_html( carbon_get_the_post_meta( 'bestsellers_subtitle' ) ); ?>
         </p>
       </div>
-      <a href="/catalog.html" class="bestsellers__link">Весь каталог</a>
+      <!-- <a href="/catalog.html" class="bestsellers__link">Весь каталог</a> -->
     </div>
 
 
@@ -37,7 +37,7 @@ if ($query->have_posts()) : ?>
       
 
     </div>
-    <a href="/catalog.html" class="bestsellers__catalog-link">Весь каталог</a>
+    <!-- <a href="/catalog.html" class="bestsellers__catalog-link">Весь каталог</a> -->
   </div>
 </section>
 

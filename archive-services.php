@@ -44,13 +44,13 @@
 
             if (!empty($pagination_links)) :
             ?>
-            <nav class="pagination" aria-label="Пагинация">
+            <!-- <nav class="pagination" aria-label="Пагинация">
                 <ul class="pagination__list">
                     <?php foreach ($pagination_links as $link) : ?>
                         <li class="pagination__item"><?php echo str_replace('page-numbers', 'pagination__link', $link); ?></li>
                     <?php endforeach; ?>
                 </ul>
-            </nav>
+            </nav> -->
             <?php endif; ?>
         <?php else : ?>
             <p>Записей не найдено.</p>
@@ -58,7 +58,7 @@
         
         </div>
 
-        <nav class="pagination" aria-label="Пагинация">
+        <!-- <nav class="pagination" aria-label="Пагинация">
         <ul class="pagination__list">
             <li class="pagination__item">
             <button
@@ -95,7 +95,7 @@
             </button>
             </li>
         </ul>
-        </nav>
+        </nav> -->
     </div>
     </section>
 </main>

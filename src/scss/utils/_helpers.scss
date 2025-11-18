@@ -63,7 +63,39 @@
 	width: 18rem;
 	height: 18rem;
 }
-.woocommerce-notices-wrapper {
+
+.user-text {
+	p, blockquote {
+		font-weight: 300;
+		font-size: 14rem;
+		line-height: 140%;
+		color: var(--dark-60);
+	}
+	h2 {
+		font-weight: 500;
+		font-size: 36rem;
+		color: #0f0f0f;
+		margin-bottom: 8rem;
+	}
+	h3, h4 {
+		font-weight: 400;
+		font-size: 18rem;
+		color: #0f0f0f;
+		margin-bottom: 12rem;
+	}
+	ul, ol {
+		font-family: var(--font-family);
+		font-weight: 300;
+		font-size: 14rem;
+		line-height: 140%;
+		color: var(--dark-60);
+		padding-left: 20rem;
+		li {
+			list-style: disc;
+		}
+	}
+}
+.added_to_cart, .woocommerce-notices-wrapper {
 	display: none;
 }
 @media (max-width: 768px) {

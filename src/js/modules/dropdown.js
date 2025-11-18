@@ -1,5 +1,4 @@
 const dropdowns = document.querySelectorAll('.custom-dropdown');
-
 dropdowns.forEach(dropdown => {
   const selectedSpan = dropdown.querySelector('.dropdown-selected span');
   const options = dropdown.querySelectorAll('.dropdown-option');
@@ -16,6 +15,13 @@ dropdowns.forEach(dropdown => {
   });
 
   options.forEach(option => {
+    // Проверяем, является ли опция активной (совпадает с выбранным значением)
+    const optionValue = option.dataset.value ?? option.getAttribute('data-value');
+    const selectedValue = selectedSpan?.textContent.trim();
+    if (optionValue === selectedValue) {
+      option.classList.add('active');
+    }
+    
     option.addEventListener('click', function(e) {
       e.stopPropagation();
 

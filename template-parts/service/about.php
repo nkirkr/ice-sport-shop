@@ -2,7 +2,7 @@
   <div class="container">
     <div class="service-about__content">
       <!-- Левая колонка -->
-      <div class="service-about__left">
+      <div class="service-about__left user-text">
         <?php echo wpautop( carbon_get_the_post_meta('service_seo_text_1') ); ?>
       </div>
 
@@ -17,7 +17,7 @@
       </div>
 
       <!-- Правая колонка -->
-      <div class="service-about__right">
+      <div class="service-about__right user-text">
         <?php echo wpautop( carbon_get_the_post_meta('service_seo_text_2') ); ?>
       </div>
     </div>

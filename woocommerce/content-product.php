@@ -48,7 +48,7 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 		do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
 		</a>
-		<button class="catalog__card-favorite <?php echo is_in_favorites( $product->get_id() ) ? 'catalog__card-favorite--checked' : ''; ?>" data-id="<?php echo $product->get_id(); ?>" aria-label="Добавить в избранное">
+		<button class="catalog__card-favorite <?php echo is_in_favorites( $product->get_id() ) ? 'catalog__card-favorite--checked' : ''; ?> to-favorite" data-id="<?php echo $product->get_id(); ?>" aria-label="Добавить в избранное">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M14.5969 2.99561C12.5857 1.76192 10.8303 2.25909 9.77576 3.05101C9.34339 3.37572 9.1272 3.53807 9 3.53807C8.8728 3.53807 8.65661 3.37572 8.22424 3.05101C7.16971 2.25909 5.41431 1.76192 3.40308 2.99561C0.763551 4.6147 0.166291 9.95614 6.25465 14.4625C7.41429 15.3208 7.99411 15.75 9 15.75C10.0059 15.75 10.5857 15.3208 11.7454 14.4625C17.8337 9.95614 17.2364 4.6147 14.5969 2.99561Z" stroke="#F8F8F8" stroke-width="1.125" stroke-linecap="round" />
 		</svg>    
@@ -141,15 +141,15 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	<div class="catalog__card-bottom">
         <div class="quantity">
             <button class="quantity__btn centered quantity__dec" aria-label="Уменьшить количество">
-                <svg width="20" height="20" viewBox="0 0 20 20">
-                    <use xlink:href="<?php echo esc_url( get_template_directory_uri() . '/build/img/sprite.svg#quantity-decrement' ); ?>"></use>
-                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M17.5 10C17.5 10.1658 17.4342 10.3247 17.3169 10.4419C17.1997 10.5592 17.0408 10.625 16.875 10.625H3.125C2.95924 10.625 2.80027 10.5592 2.68306 10.4419C2.56585 10.3247 2.5 10.1658 2.5 10C2.5 9.83424 2.56585 9.67527 2.68306 9.55806C2.80027 9.44085 2.95924 9.375 3.125 9.375H16.875C17.0408 9.375 17.1997 9.44085 17.3169 9.55806C17.4342 9.67527 17.5 9.83424 17.5 10Z" fill="white" />
+				</svg>
             </button>
             <input type="number" min="1" value="1" class="quantity__input" readonly aria-label="Количество товара">
             <button class="quantity__btn centered quantity__inc" aria-label="Увеличить количество">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<use xlink:href="<?php echo esc_url( get_template_directory_uri() . '/build/img/sprite.svg#quantity-increment' ); ?>"></use>
-                </svg>
+					<path d="M17.5 10C17.5 10.1658 17.4342 10.3247 17.3169 10.4419C17.1997 10.5592 17.0408 10.625 16.875 10.625H10.625V16.875C10.625 17.0408 10.5592 17.1997 10.4419 17.3169C10.3247 17.4342 10.1658 17.5 10 17.5C9.83424 17.5 9.67527 17.4342 9.55806 17.3169C9.44085 17.1997 9.375 17.0408 9.375 16.875V10.625H3.125C2.95924 10.625 2.80027 10.5592 2.68306 10.4419C2.56585 10.3247 2.5 10.1658 2.5 10C2.5 9.83424 2.56585 9.67527 2.68306 9.55806C2.80027 9.44085 2.95924 9.375 3.125 9.375H9.375V3.125C9.375 2.95924 9.44085 2.80027 9.55806 2.68306C9.67527 2.56585 9.83424 2.5 10 2.5C10.1658 2.5 10.3247 2.56585 10.4419 2.68306C10.5592 2.80027 10.625 2.95924 10.625 3.125V9.375H16.875C17.0408 9.375 17.1997 9.44085 17.3169 9.55806C17.4342 9.67527 17.5 9.83424 17.5 10Z" fill="white" />
+				</svg>
             </button>
         </div>
 

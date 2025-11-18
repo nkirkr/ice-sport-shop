@@ -21,7 +21,7 @@ if ($query->have_posts()) : ?>
         <h2 class="services__title"><?php echo esc_html( carbon_get_the_post_meta('services_title') ); ?></h2>
         <p class="services__subtitle"><?php echo esc_html( carbon_get_the_post_meta('services_subtitle') ); ?></p>
       </div>
-      <a href="/services.html" class="services__link">Все услуги</a>
+      <a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="services__link">Все услуги</a>
     </div>
     <div class="services__grid">
       
@@ -32,7 +32,7 @@ if ($query->have_posts()) : ?>
     <?php endwhile; wp_reset_postdata(); ?>
      
     </div>
-    <a href="/services.html" class="services__catalog-link">Все услуги</a>
+    <a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="services__catalog-link">Все услуги</a>
   </div>
 </section>
 

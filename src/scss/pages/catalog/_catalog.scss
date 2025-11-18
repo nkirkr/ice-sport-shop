@@ -15,6 +15,7 @@ body.catalog-page .main {
     &__list {
         gap: 20rem 10rem;
         display: grid;
+        margin-bottom: 60rem;
         grid-template-columns: repeat(4, 1fr);
     }
     &__items {
@@ -93,7 +94,7 @@ body.catalog-page .main {
     &__show-more-wrapper {
         display: flex;
         justify-content: center;
-        margin: 60rem 0 40rem;
+        margin: 0rem 0 40rem;
 
         @media(max-width: 768px){
             margin: 0;

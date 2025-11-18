@@ -92,8 +92,8 @@ do_action( 'woocommerce_before_single_product' );
 
 	<?php do_action('product_specs'); ?>
 
-	<?php get_template_part('template-parts/product/text-image'); ?>
-	<?php get_template_part('template-parts/product/similar'); ?>
+	<?php get_template_part('template-parts/product/sizes'); ?>
+	<?php get_template_part('template-parts/product/seo-block'); ?>
 
 </div>
 

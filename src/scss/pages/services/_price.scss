@@ -6,12 +6,13 @@
     width: 100%;
     
     &__header {
-        display: flex;
+        display: grid;
+        grid-template-columns: 196rem 120rem 1fr auto;
         align-items: center;
-        justify-content: space-between;
         background-color: var(--dark);
         padding: 20rem;
         border-radius: 5rem 5rem 0 0;
+        gap: 0;
     }
     
     &__col {
@@ -22,17 +23,19 @@
         color: var(--white);
         
         &--name {
-            width: 105rem;
+            width: 196rem;
+            grid-column: 1;
         }
         
         &--desc {
-            flex: 1;
-            margin-left: 207rem;
+            grid-column: 3;
+            max-width: 574rem;
         }
         
         &--price {
-            width: 100rem;
-            margin-left: 120rem;
+            grid-column: 4;
+            white-space: nowrap;
+            text-align: right;
         }
     }
     
@@ -42,11 +45,12 @@
     }
     
     &__row {
-        display: flex;
+        display: grid;
+        grid-template-columns: 196rem 120rem 1fr auto;
         align-items: center;
-        justify-content: space-between;
-        padding: 16rem 0;
+        padding: 16rem 20rem;
         border-bottom: 1rem solid #DFDFDF;
+        gap: 0;
         
         &:last-child {
             border-bottom: none;
@@ -62,8 +66,8 @@
         color: #232323;
         margin: 0;
         white-space: nowrap;
-        flex-shrink: 0;
         width: 196rem;
+        grid-column: 1;
     }
     
     &__description {
@@ -73,8 +77,8 @@
         line-height: 1.2;
         color: rgba(41, 41, 41, 0.6);
         margin: 0;
-        flex: 1;
         max-width: 574rem;
+        grid-column: 3;
     }
     
     &__cost {
@@ -86,7 +90,8 @@
         color: #353535;
         margin: 0;
         white-space: nowrap;
-        flex-shrink: 0;
+        text-align: right;
+        grid-column: 4;
     }
     
     @media (max-width: 1024px) {
@@ -95,8 +100,7 @@
         }
         
         &__row {
-            flex-direction: column;
-            align-items: flex-start;
+            grid-template-columns: 1fr;
             padding: 16rem 0;
             gap: 16rem;
         }
@@ -113,6 +117,7 @@
         
         &__cost {
             margin: 0;
+            text-align: left;
         }
     }
     
@@ -132,6 +137,7 @@
         
         &__cost {
             margin: 0;
+            text-align: left;
         }
     }
 }

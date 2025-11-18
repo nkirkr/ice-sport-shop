@@ -2,25 +2,6 @@
 
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
-//Корзина
-
-add_filter('woocommerce_add_to_cart_fragments', function( $fragments ) {
-    ob_start();
-    $cart_count = WC()->cart->get_cart_contents_count();
-    ?>
-    <button class="header__links-item cart-btn" aria-label="Открыть корзину" id="cart-btn">
-        <svg class="header__links-icon cart-icon default-icon" width="18" height="18">
-            <use href="<?php echo esc_url( get_template_directory_uri() . '/assets/img/sprite.svg#' . ( $cart_count > 0 ? 'cart-full' : 'cart-empty' ) ); ?>"></use>
-        </svg>
-        <p>Корзина&nbsp;|</p>
-        <p><span class="header__links-count" id="cart-count">&nbsp;<?php echo $cart_count; ?></span></p>
-    </button>
-    <?php
-    $fragments['#cart-btn'] = ob_get_clean();
-    return $fragments;
-});
-
-
 //карточка товара
 
 remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
@@ -66,7 +47,7 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 11);
-// add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 12);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 12);
 
 add_action('woocommerce_single_product_summary', function() {
     global $product;
@@ -140,30 +121,37 @@ add_action('woocommerce_single_product_summary', function() {
 }, 11);
 
 
-add_action( 'woocommerce_single_product_summary', function() {
-    echo '<div class="product__controls">
-    <button class="product__add-to-cart">Добавить в корзину</button>
-    <div class="quantity">
-      <button class="quantity__btn" aria-label="Уменьшить количество">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <line x1="2.5" y1="9.375" x2="17.5" y2="9.375" stroke="currentColor" stroke-width="1.25"></line>
-        </svg>
-      </button>
-      <input type="number" min="1" value="3" class="quantity__input" readonly="">
-      <button class="quantity__btn" aria-label="Увеличить количество">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <line x1="2.5" y1="10" x2="17.5" y2="10" stroke="currentColor" stroke-width="1.25"></line>
-          <line x1="10" y1="2.5" x2="10" y2="17.5" stroke="currentColor" stroke-width="1.25"></line>
-        </svg>
-      </button>
-    </div>
-    <div class="product__action-buttons">
-      <button class="product__action-btn product__favorite" aria-label="Добавить в избранное">
-        <img src="./img/icons/bestsellers/favourite.svg" alt="" width="19" height="19">
-      </button>
-    </div>
-  </div>';
-}, 12);
+// add_action( 'woocommerce_single_product_summary', function() {
+//     global $product;
+//     $route = get_template_directory_uri();
+
+//     echo '<div class="product__controls">
+//     <button class="product__add-to-cart">Добавить в корзину</button>
+//     <div class="quantity">
+//       <button class="quantity__btn" aria-label="Уменьшить количество">
+//         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+//           <line x1="2.5" y1="9.375" x2="17.5" y2="9.375" stroke="currentColor" stroke-width="1.25"></line>
+//         </svg>
+//       </button>
+//       <input type="number" min="1" value="3" class="quantity__input" readonly="">
+//       <button class="quantity__btn" aria-label="Увеличить количество">
+//         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+//           <line x1="2.5" y1="10" x2="17.5" y2="10" stroke="currentColor" stroke-width="1.25"></line>
+//           <line x1="10" y1="2.5" x2="10" y2="17.5" stroke="currentColor" stroke-width="1.25"></line>
+//         </svg>
+//       </button>
+//     </div>
+//     <div class="product__action-buttons">
+//       <button 
+//       class="product__action-btn product__favorite to-favorite" 
+//       aria-label="Добавить в избранное"
+//       data-id="' . esc_attr( $product->get_id() ) . '"
+//       >
+//         <img src="' . $route . '/build/img/icons/bestsellers/favourite.svg" alt="" width="19" height="19">
+//       </button>
+//     </div>
+//   </div>';
+// }, 12);
 
 
 
@@ -278,3 +266,15 @@ add_filter( 'woocommerce_get_breadcrumb', function( $crumbs ) {
 add_filter('wc_get_price_decimals', function() {
     return 0;
 });
+
+
+add_filter( 'loop_shop_per_page', 'catalog_default_per_page', 20 );
+
+function catalog_default_per_page( $cols ) {
+
+    if ( defined('DOING_AJAX') && DOING_AJAX && isset($_POST['action']) && $_POST['action'] === 'ajaxfilter' ) {
+        return $cols;
+    }
+
+    return 5;
+}

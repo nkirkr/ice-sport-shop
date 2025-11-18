@@ -1,5 +1,5 @@
 <section class="about container page-section">
-  <div class="about__content">
+  <div class="about__content user-text">
     <div class="about__column about__column--left">
     
       <?php echo wpautop( carbon_get_the_post_meta('home_seo_text_1') ); ?>

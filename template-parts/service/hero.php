@@ -11,7 +11,7 @@ $text = carbon_get_the_post_meta('service_hero_text');
           <?php echo esc_html( carbon_get_the_post_meta( 'service_subtitle' ) ); ?>
         </p>
       </div>
-      <div class="service-hero__benefits service-hero__benefits--mobile">
+      <div class="service-hero__benefits service-hero__benefits--mobile user-text">
         <?php echo wpautop( $text ); ?>
       </div>
       <div class="service-hero__cta">
@@ -33,7 +33,7 @@ $text = carbon_get_the_post_meta('service_hero_text');
       />
     </div>
 
-    <div class="service-hero__benefits service-hero__benefits--desktop">
+    <div class="service-hero__benefits service-hero__benefits--desktop user-text">
       <?php echo wpautop( $text ); ?>
     </div>
   </div>

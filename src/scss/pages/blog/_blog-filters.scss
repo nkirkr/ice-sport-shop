@@ -4,6 +4,9 @@
     right: 80rem;
     width: 260rem;
     flex-shrink: 0;
+    a {
+        color: var(--dark-60);
+    }
     &__title {
         font-size: 24rem;
         margin-bottom: 15rem;
@@ -62,6 +65,9 @@
         display: block;
     }
 
+    &__arrow {
+        display: none;
+    }
     @media (max-width: 768px) {
         position: unset;
         &__open {

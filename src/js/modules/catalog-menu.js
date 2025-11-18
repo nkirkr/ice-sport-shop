@@ -133,25 +133,39 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    openMenuBtn._handler = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpened = menu.classList.toggle("menu--visible");
-      // Не показываем overlay для меню каталога
-      header.classList.toggle("header--menu-opened", isOpened);
-    };
-    openMenuBtn.addEventListener("click", openMenuBtn._handler);
+    // Открытие меню при наведении
+    openMenuBtn.addEventListener("mouseenter", () => {
+      menu.classList.add("menu--visible");
+      header.classList.add("header--menu-opened");
+    });
 
-    // Закрытие меню при клике вне меню
-    document.addEventListener("click", (e) => {
-      if (
-        menu.classList.contains("menu--visible") &&
-        !menu.contains(e.target) &&
-        !openMenuBtn.contains(e.target)
-      ) {
-        menu.classList.remove("menu--visible");
-        header.classList.remove("header--menu-opened");
+    // Закрытие меню при уходе курсора
+    const menuContainer = openMenuBtn.closest(".header__nav-item");
+    if (menuContainer) {
+      let closeTimeout;
+      
+      const handleMouseLeave = () => {
+        closeTimeout = setTimeout(() => {
+          menu.classList.remove("menu--visible");
+          header.classList.remove("header--menu-opened");
+        }, 100);
+      };
+
+      menuContainer.addEventListener("mouseleave", handleMouseLeave);
+      menu.addEventListener("mouseenter", () => {
+        clearTimeout(closeTimeout);
+      });
+      menu.addEventListener("mouseleave", handleMouseLeave);
+    }
+
+    // Клик на кнопку "Каталог" - переход на страницу каталога (если меню не открыто)
+    openMenuBtn.addEventListener("click", (e) => {
+      // Если меню открыто, не переходим
+      if (menu.classList.contains("menu--visible")) {
+        e.preventDefault();
+        return;
       }
+      // Разрешаем стандартный переход по ссылке
     });
 
     if (search) {
@@ -167,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
       search.addEventListener("click", search._safeHandler, true);
     }
 
-    // Обработчик клика на пункты меню для открытия подменю
+    // Обработчик hover на пункты меню для открытия подменю
     const menuItems = menu.querySelectorAll(".menu__item-wrapper");
     const allCategories = menu.querySelectorAll(".menu__categories");
     
@@ -176,10 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const category = itemWrapper.getAttribute("data-category");
       
       if (itemLink && category) {
-        itemLink.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          
+        // Открытие подменю при наведении
+        itemWrapper.addEventListener("mouseenter", () => {
           // Закрываем все другие открытые подменю
           menuItems.forEach((otherItem) => {
             if (otherItem !== itemWrapper) {
@@ -194,33 +206,133 @@ document.addEventListener("DOMContentLoaded", () => {
           // Показываем подменю для выбранного пункта
           const targetCategories = menu.querySelector(`.menu__categories[data-category="${category}"]`);
           if (targetCategories) {
-            const isActive = itemWrapper.classList.contains("is-active");
-            if (isActive) {
-              itemWrapper.classList.remove("is-active");
-              targetCategories.style.display = "none";
-            } else {
-              itemWrapper.classList.add("is-active");
-              targetCategories.style.display = "block";
+            itemWrapper.classList.add("is-active");
+            targetCategories.style.display = "block";
+            
+            // Показываем первый подраздел по умолчанию
+            const firstSubsection = targetCategories.querySelector('.menu__categories-title[data-subsection="0"]');
+            if (firstSubsection) {
+              // Убираем активный класс у всех подразделов
+              targetCategories.querySelectorAll(".menu__categories-column--subsections .menu__categories-title").forEach((t) => {
+                t.classList.remove("is-active");
+              });
+              
+              // Добавляем активный класс к первому подразделу
+              firstSubsection.classList.add("is-active");
+              
+              // Скрываем все блоки подкатегорий
+              targetCategories.querySelectorAll(".menu__categories-wrapper").forEach((wrapper) => {
+                wrapper.style.display = "none";
+              });
+              
+              // Показываем первый блок подкатегорий
+              const firstWrapper = targetCategories.querySelector('.menu__categories-wrapper[data-subsection="0"]');
+              if (firstWrapper) {
+                firstWrapper.style.display = "flex";
+              }
             }
           }
         });
+
+        // Клик на пункт меню - переход по ссылке (если есть href)
+        if (itemLink.tagName === 'A' && itemLink.href) {
+          itemLink.addEventListener("click", (e) => {
+            // Разрешаем стандартный переход по ссылке
+            // Не предотвращаем событие
+          });
+        }
       }
     });
     
-    // Обработчик клика на подразделы для показа подкатегорий
+    // Обработчик наведения на подразделы для показа подкатегорий
     menu.querySelectorAll(".menu__categories-column--subsections .menu__categories-title").forEach((title) => {
+      title.addEventListener("mouseenter", () => {
+        // Находим родительскую категорию
+        const parentCategory = title.closest(".menu__categories");
+        if (!parentCategory) return;
+        
+        const subsection = title.getAttribute("data-subsection");
+        if (subsection === null) return;
+        
+        // Убираем активный класс у всех подразделов в текущей категории
+        parentCategory.querySelectorAll(".menu__categories-column--subsections .menu__categories-title").forEach((t) => {
+          t.classList.remove("is-active");
+        });
+        
+        // Добавляем активный класс к наведенному подразделу
+        title.classList.add("is-active");
+        
+        // Скрываем все блоки подкатегорий в текущей категории
+        parentCategory.querySelectorAll(".menu__categories-wrapper").forEach((wrapper) => {
+          wrapper.style.display = "none";
+        });
+        
+        // Показываем блок подкатегорий с соответствующим data-subsection
+        const targetWrapper = parentCategory.querySelector(`.menu__categories-wrapper[data-subsection="${subsection}"]`);
+        if (targetWrapper) {
+          targetWrapper.style.display = "flex";
+        }
+      });
+      
+      // Обработчик клика на подразделы для перехода
       title.addEventListener("click", (e) => {
+        // Если это ссылка, разрешаем стандартный переход
+        if (title.tagName === 'A' && title.href) {
+          // Убираем активный класс у всех подразделов во ВСЕХ категориях
+          menu.querySelectorAll(".menu__categories-column--subsections .menu__categories-title").forEach((t) => {
+            t.classList.remove("is-active");
+          });
+          
+          // Добавляем активный класс к выбранному подразделу
+          title.classList.add("is-active");
+          
+          // Обновляем отображение подкатегорий
+          const parentCategory = title.closest(".menu__categories");
+          if (parentCategory) {
+            const subsection = title.getAttribute("data-subsection");
+            if (subsection !== null) {
+              parentCategory.querySelectorAll(".menu__categories-wrapper").forEach((wrapper) => {
+                wrapper.style.display = "none";
+              });
+              
+              const targetWrapper = parentCategory.querySelector(`.menu__categories-wrapper[data-subsection="${subsection}"]`);
+              if (targetWrapper) {
+                targetWrapper.style.display = "flex";
+              }
+            }
+          }
+          
+          // Разрешаем стандартный переход по ссылке
+          return;
+        }
+        
+        // Если это не ссылка, предотвращаем стандартное поведение
         e.preventDefault();
         e.stopPropagation();
         
-        // Убираем активный класс у всех подразделов
-        const subsectionsColumn = title.closest(".menu__categories-column--subsections");
-        subsectionsColumn?.querySelectorAll(".menu__categories-title").forEach((t) => {
+        // Убираем активный класс у всех подразделов во ВСЕХ категориях
+        menu.querySelectorAll(".menu__categories-column--subsections .menu__categories-title").forEach((t) => {
           t.classList.remove("is-active");
         });
         
         // Добавляем активный класс к выбранному подразделу
         title.classList.add("is-active");
+        
+        // Обновляем отображение подкатегорий
+        const parentCategory = title.closest(".menu__categories");
+        if (parentCategory) {
+          const subsection = title.getAttribute("data-subsection");
+          if (subsection !== null) {
+            parentCategory.querySelectorAll(".menu__categories-wrapper").forEach((wrapper) => {
+              wrapper.style.display = "none";
+            });
+            
+            const targetWrapper = parentCategory.querySelector(`.menu__categories-wrapper[data-subsection="${subsection}"]`);
+            if (targetWrapper) {
+              targetWrapper.style.display = "flex";
+            }
+          }
+        }
       });
     });
   }

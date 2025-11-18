@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: var(--grey);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 40rem;
     padding: 4rem;
     width: 104rem;
@@ -25,7 +25,9 @@
         svg {
             width: 20rem;
             height: 20rem;
-            color: var(--white);
+            path {
+                fill: var(--white);
+            }
         }
     }
     &__input {
