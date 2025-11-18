@@ -130,7 +130,7 @@ $current_cat = get_queried_object();
   <?php else : ?>
       <?php do_action( 'woocommerce_no_products_found' ); ?>
   <?php endif; ?>
-  <!-- <div class="catalog__show-more-wrapper">
+  <div class="catalog__show-more-wrapper">
   <button class="catalog__show-more btn-show-more">Показать ещё</button>
   </div>
   <nav class="pagination" aria-label="Пагинация">
@@ -165,5 +165,5 @@ $current_cat = get_queried_object();
         </button>
       </li>
     </ul>
-  </nav> -->
+  </nav>
 </div>

@@ -48,37 +48,51 @@
 
 jQuery(function($){
 
-    function sendAjax(form) {
+    function sendAjax(form, append = false) {
 
         $.ajax({
             type: 'POST',
             url: woocommerce_params.ajax_url,
             data: form.serialize(),
             beforeSend: function() {
-                $('.catalog__items').block({
-                    message: null,
-                    overlayCSS: {
-                        background: 'rgba(255,255,255,0.6) url(' 
-                          + window.location.protocol + '//' + window.location.hostname 
-                          + '/wp-content/themes/woocommerce-course/assets/img/oval.svg) center 150px no-repeat',
-                        opacity: 0.6
-                    }
-                });
+                if (!append) {
+                    $('.catalog__items').block({
+                        message: null,
+                        overlayCSS: {
+                            background: 'rgba(255,255,255,0.6)',
+                            opacity: 0.6
+                        }
+                    });
+                }
             },
             success: function(data) {
-                $('.catalog__list').html(data.products);
-                
+
+                if (append) {
+                    $('.catalog__list').append(data.products);
+                } else {
+                    $('.catalog__list').html(data.products);
+                    $('#page').val(1); // сброс при фильтрации
+                }
+
+                // обновляем счётчик товаров
                 if (data.count && data.count.length > 0) {
                     $('.catalog__count').text(data.count).show();
                 } else {
                     $('.catalog__count').hide();
                 }
 
+                // скрываем кнопку если товары закончились
+                if (data.no_more) {
+                    $('.btn-show-more').hide();
+                } else {
+                    $('.btn-show-more').show();
+                }
+
                 $('.catalog__items').unblock();
             }
-            
         });
     }
+
 
     $('#ajaxform').on('submit', function(e){
         e.preventDefault();
@@ -127,6 +141,14 @@ jQuery(function($){
 
         $('#ajaxform').submit();
     });
-    
+
+    $('.btn-show-more').on('click', function () {
+        let page = parseInt($('#page').val(), 10);
+        page++;
+        $('#page').val(page);
+
+        sendAjax($('#ajaxform'), true); 
+    });
+        
 
 });

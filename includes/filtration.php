@@ -5,12 +5,14 @@ add_action('wp_ajax_nopriv_ajaxfilter', 'custom_filter');
 function custom_filter() {
     sleep(1);
 
+    $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
     $per_page = isset($_POST['per_page']) ? intval($_POST['per_page']) : 5;
 
     $args = array(
         'post_type' => 'product',
         'post_status' => 'publish',
         'posts_per_page' => $per_page, 
+        'paged' => $page,
         'tax_query' => array(
             'relation' => 'AND',
             array(
@@ -111,7 +113,6 @@ function custom_filter() {
     $args['meta_query'] = [
         'relation' => 'AND',
 
-        // фильтрация по цене
         [
             'key'     => '_price',
             'value'   => [$min_price, $max_price],
@@ -121,6 +122,8 @@ function custom_filter() {
     ];
 
     $query = new WP_Query( $args );
+
+    $no_more = ($page >= $query->max_num_pages);
 
 	ob_start();
 
@@ -140,8 +143,12 @@ function custom_filter() {
 	ob_end_clean();
 
     $found_posts = intval($query->found_posts);
-    $from        = $found_posts > 0 ? 1 : 0;
-    $to          = min($found_posts, $per_page);
+    $from = ($page - 1) * $per_page + 1;
+    $to = min($page * $per_page, $found_posts);
+    if ($found_posts === 0) {
+        $from = 0;
+        $to   = 0;
+    }
 
     if ($found_posts > 0) {
         $count_text = "Товаров {$from}–{$to} из {$found_posts}";
@@ -151,7 +158,8 @@ function custom_filter() {
 
     wp_send_json([
         'products' => $html_products,
-        'count'    => $count_text
+        'count'    => $count_text,
+        'no_more' => $no_more
     ]);
 
     die();
