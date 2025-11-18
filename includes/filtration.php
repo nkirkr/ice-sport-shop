@@ -156,11 +156,75 @@ function custom_filter() {
         $count_text = "";
     }
 
+    $pagination_html = render_ajax_pagination($page, $query->max_num_pages);
+
     wp_send_json([
         'products' => $html_products,
         'count'    => $count_text,
-        'no_more' => $no_more
+        'no_more' => $no_more,
+        'pagination' => $pagination_html
     ]);
 
     die();
+}
+
+
+function render_ajax_pagination($page, $max_pages) {
+
+    if ($max_pages <= 1) return ''; 
+
+    ob_start();
+    ?>
+    <nav class="pagination" aria-label="Пагинация">
+        <ul class="pagination__list">
+
+            <li class="pagination__item">
+                <button class="pagination__arrow <?= $page <= 1 ? 'pagination__arrow--disabled' : '' ?>"
+                        data-page="<?= max(1, $page - 1) ?>"
+                        <?= $page <= 1 ? 'disabled' : '' ?>>
+                    Предыдущая
+                </button>
+            </li>
+
+            <?php
+            $start = max(1, $page - 2);
+            $end   = min($max_pages, $page + 2);
+
+            if ($start > 1) {
+                echo '<li class="pagination__item"><a class="pagination__link" data-page="1">1</a></li>';
+                if ($start > 2) {
+                    echo '<li class="pagination__item pagination__item--dots"><span>...</span></li>';
+                }
+            }
+
+            for ($i = $start; $i <= $end; $i++) {
+                $active = ($i == $page) ? 'pagination__link--active' : '';
+                echo "<li class='pagination__item'>
+                        <a class='pagination__link {$active}' data-page='{$i}'>{$i}</a>
+                      </li>";
+            }
+
+            if ($end < $max_pages) {
+                if ($end < $max_pages - 1) {
+                    echo '<li class="pagination__item pagination__item--dots"><span>...</span></li>';
+                }
+                echo "<li class='pagination__item'>
+                        <a class='pagination__link' data-page='{$max_pages}'>{$max_pages}</a>
+                      </li>";
+            }
+            ?>
+
+            <li class="pagination__item">
+                <button class="pagination__arrow <?= $page >= $max_pages ? 'pagination__arrow--disabled' : '' ?>"
+                        data-page="<?= min($max_pages, $page + 1) ?>"
+                        <?= $page >= $max_pages ? 'disabled' : '' ?>>
+                    Далее
+                </button>
+            </li>
+
+        </ul>
+    </nav>
+
+    <?php
+    return ob_get_clean();
 }

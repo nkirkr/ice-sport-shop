@@ -133,37 +133,12 @@ $current_cat = get_queried_object();
   <div class="catalog__show-more-wrapper">
   <button class="catalog__show-more btn-show-more">Показать ещё</button>
   </div>
-  <nav class="pagination" aria-label="Пагинация">
-    <ul class="pagination__list">
-      <li class="pagination__item">
-        <button
-          class="pagination__arrow pagination__arrow--disabled"
-          disabled
-          aria-label="Предыдущая страница"
-        >
-          Предыдущая
-        </button>
-      </li>
-      <li class="pagination__item">
-        <a class="pagination__link pagination__link--active" href="#">1</a>
-      </li>
-      <li class="pagination__item">
-        <a class="pagination__link" href="#">2</a>
-      </li>
-      <li class="pagination__item">
-        <a class="pagination__link" href="#">3</a>
-      </li>
-      <li class="pagination__item pagination__item--dots">
-        <span>...</span>
-      </li>
-      <li class="pagination__item">
-        <a class="pagination__link" href="#">10</a>
-      </li>
-      <li class="pagination__item">
-        <button class="pagination__arrow" aria-label="Следующая страница">
-          Далее
-        </button>
-      </li>
-    </ul>
-  </nav>
+  <?php
+    global $wp_query;
+
+    echo render_ajax_pagination( 
+        max( 1, get_query_var( 'paged', 1 ) ),
+        $wp_query->max_num_pages
+    );
+?>
 </div>

@@ -71,17 +71,21 @@ jQuery(function($){
                     $('.catalog__list').append(data.products);
                 } else {
                     $('.catalog__list').html(data.products);
-                    $('#page').val(1); // сброс при фильтрации
+                    $('#page').val(1);
                 }
 
-                // обновляем счётчик товаров
                 if (data.count && data.count.length > 0) {
                     $('.catalog__count').text(data.count).show();
                 } else {
                     $('.catalog__count').hide();
                 }
 
-                // скрываем кнопку если товары закончились
+                if (data.pagination) {
+                    $('.pagination').replaceWith(data.pagination);
+                } else {
+                    $('.pagination').hide();
+                }
+
                 if (data.no_more) {
                     $('.btn-show-more').hide();
                 } else {
@@ -149,6 +153,21 @@ jQuery(function($){
 
         sendAjax($('#ajaxform'), true); 
     });
-        
 
+    $(document).on('click', '.pagination__link', function(e) {
+        e.preventDefault();
+        let page = $(this).data('page');
+        $('#page').val(page);
+        sendAjax($('#ajaxform'));
+    });
+
+    $(document).on('click', '.pagination__arrow', function(e) {
+        if ($(this).is('[disabled]')) return;
+        let page = $(this).data('page');
+        $('#page').val(page);
+        sendAjax($('#ajaxform'));
+    });
+        
 });
+
+
