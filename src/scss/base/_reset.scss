@@ -87,3 +87,18 @@ label {
 legend {
 	display: block;
 }
+.aws-container .aws-search-form {
+	height: unset;
+}
+.aws-container .aws-show-clear .aws-search-field {
+	padding-right: unset;
+	width: 250rem;
+}
+.aws-container .aws-search-field {
+	padding: unset;
+	font-size: unset;
+	border: unset;
+}
+.aws-container .aws-search-field:focus {
+	background: var(--grey);
+}

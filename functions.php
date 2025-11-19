@@ -24,8 +24,9 @@ require_once get_template_directory() . '/includes/favorites.php';
 require_once get_template_directory() . '/includes/globals.php';
 require_once get_template_directory() . '/includes/filtration.php';
 require_once get_template_directory() . '/includes/cart.php';
+require_once get_template_directory() . '/includes/mail.php';
 
-
+add_filter( 'show_admin_bar', '__return_false' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

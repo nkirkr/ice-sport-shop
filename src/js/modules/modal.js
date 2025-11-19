@@ -1,10 +1,8 @@
-// Модальные окна
 export function initModals() {
   const modals = document.querySelectorAll(".modal");
   const openButtons = document.querySelectorAll("[data-modal-open]");
   const closeButtons = document.querySelectorAll("[data-modal-close]");
 
-  // Открытие модалки
   openButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
@@ -16,7 +14,6 @@ export function initModals() {
     });
   });
 
-  // Закрытие модалки
   closeButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
@@ -27,7 +24,6 @@ export function initModals() {
     });
   });
 
-  // Закрытие по Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       const activeModal = document.querySelector(".modal.active");
@@ -37,27 +33,25 @@ export function initModals() {
     }
   });
 
-  // Обработка отправки формы
-  const callbackForm = document.getElementById("callback-form");
-  if (callbackForm) {
-    callbackForm.addEventListener("submit", (e) => {
+  const modalForms = document.querySelectorAll(".modal__form");
+
+  modalForms.forEach((form) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const formData = new FormData(callbackForm);
-      const name = formData.get("name");
-      const phone = formData.get("phone");
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
 
-      console.log("Форма отправлена:", { name, phone });
+      console.log("Форма отправлена:", data);
 
-      // Здесь будет отправка на сервер
-      // После успешной отправки:
       alert("Спасибо! Мы свяжемся с вами в ближайшее время.");
 
-      const modal = callbackForm.closest(".modal");
+      const modal = form.closest(".modal");
       closeModal(modal);
-      callbackForm.reset();
+      form.reset();
     });
-  }
+  });
+
 }
 
 function openModal(modal) {

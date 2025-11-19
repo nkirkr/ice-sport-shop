@@ -13,7 +13,8 @@
     get_template_part('template-parts/home/services');
     get_template_part('template-parts/home/promo');
     get_template_part('template-parts/contact');
-    get_template_part('template-parts/map');
+    // get_template_part('template-parts/map');
+    get_template_part('template-parts/cart-modal');
 ?>
 
 <?php get_footer(); ?>

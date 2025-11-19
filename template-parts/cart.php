@@ -52,6 +52,7 @@ $total_after_discount = $cart_subtotal - $discount_amount;
             <?php if ($items_count === 0) echo 'disabled'; ?> 
             style="display: inline-block; text-align: center" 
             class="cart__checkout-btn accent-btn"
+            data-modal-open="cart"
             >
             Оформить заказ</button>
         </div>

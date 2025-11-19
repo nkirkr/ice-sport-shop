@@ -128,8 +128,17 @@ jQuery(function($){
     });
 
     $('.custom-dropdown[data-name="orderby"] .dropdown-option').on('click', function () {
-        let selected = $(this).data('value');
-        $('#orderby').val(selected);
+        const value = $(this).data('value');      
+        const text  = $(this).text().trim();      
+
+        $('#orderby').val(value);
+
+        $(this)
+            .closest('.custom-dropdown')
+            .find('.dropdown-selected span')
+            .text(text)
+            .attr('data-value', value);
+
         $('#ajaxform').submit();
     });
 

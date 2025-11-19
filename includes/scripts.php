@@ -62,6 +62,10 @@ function icesport_scripts() {
         // ]);
     }
 
+    wp_enqueue_script('forms-js', get_template_directory_uri() . '/js/forms.js', array(), null, true);
+    wp_localize_script('forms-js', 'my_ajax_obj', [
+        'ajaxurl' => admin_url('admin-ajax.php')
+    ]);
     
 	wp_enqueue_style( 'icesport-style', get_template_directory_uri() . '/build/css/main.css', array() );
     

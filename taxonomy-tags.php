@@ -2,19 +2,11 @@
 
 <main class="main">
   <section class="blog-header">
+    <?php custom_breadcrumbs(); ?>
     <div class="container">
-      <nav class="breadcrumbs blog-header__breadcrumbs">
-        <ul class="breadcrumbs__list">
-          <li><a class="breadcrumbs__link" href="/">Главная</a></li>
-          <li
-            class="breadcrumbs__separator breadcrumbs__separator--current"
-          ></li>
-          <li class="breadcrumbs__current">Блог</li>
-        </ul>
-      </nav>
       <div class="blog-header__top">
         <div class="blog-header__text">
-          <h1 class="blog-header__title">Блог</h1>
+          <h1 class="blog-header__title"><?php echo single_term_title(); ?></h1>
           <p class="blog-header__subtitle">Последние публикации</p>
         </div>
       </div>

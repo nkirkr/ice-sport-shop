@@ -100,3 +100,36 @@
         }
     }
 }
+
+.pagination__link.current {
+    background-color: var(--dark);
+    color: var(--white);
+}
+.prev.pagination__link, .next.pagination__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44rem;
+    padding: 0 16rem;
+    border: 1rem solid #222222;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 16rem;
+    line-height: 1.2;
+    color: var(--dark);
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+    
+    &:hover:not(&--disabled) {
+        background-color: var(--dark-10);
+    }
+    
+}
+
+ @media (max-width: 768px) {
+    .prev.pagination__link, .next.pagination__link {
+        display: none;
+    }
+ }

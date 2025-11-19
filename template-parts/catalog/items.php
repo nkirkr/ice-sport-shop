@@ -1,5 +1,9 @@
 <?php
+global $wp_query;
 $current_cat = get_queried_object();
+$per_page = intval( get_query_var( 'posts_per_page', 20 ) );
+$found_posts = intval( $wp_query->found_posts );
+$hide_show_more = ($found_posts <= $per_page);
 ?>
 
 <div class="catalog__items">
@@ -130,8 +134,8 @@ $current_cat = get_queried_object();
   <?php else : ?>
       <?php do_action( 'woocommerce_no_products_found' ); ?>
   <?php endif; ?>
-  <div class="catalog__show-more-wrapper">
-  <button class="catalog__show-more btn-show-more">Показать ещё</button>
+  <div class="catalog__show-more-wrapper" style="<?php echo $hide_show_more ? 'display:none;' : ''; ?>">
+    <button class="catalog__show-more btn-show-more">Показать ещё</button>
   </div>
   <?php
     global $wp_query;

@@ -195,9 +195,9 @@
               class="default-icon"
             />
           </button>
-          <form class="header__search">
-            <input type="text" placeholder="Поиск" name="search" />
-          </form>
+          <div class="header__search">
+            <?php aws_get_search_form( true ); ?>
+          </div>
         </div>
 
         <button

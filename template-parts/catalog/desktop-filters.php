@@ -68,8 +68,6 @@ $current_cat = get_queried_object();
     <input type="hidden" name="per_page" id="per_page" value="5">
     <input type="hidden" name="page" id="page" value="1">
 
-
-
     <?php if ( $current_cat->term_id == $top_level->term_id && !empty($subsections) ) : ?>
 
     <div class="filter-dropdown">
